@@ -13,17 +13,6 @@ export const firebaseConfig = {
     storageBucket: "course-tracker-46e40.appspot.com",
   };
 
-@Component({
-  selector: 'online-course-tracker-app',
-  template: `
-  <ul>
-    <li *ngFor="let course of courses | async">
-      {{ course.name }}
-    </li>
-  </ul>
-  `
-})
-
 @NgModule({
   declarations: [
     AppComponent
@@ -39,6 +28,4 @@ export const firebaseConfig = {
 })
 
 export class MyApp {
-  items: FirebaseListObservable<any[]>;
-  
 }

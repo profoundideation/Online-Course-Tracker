@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
 @Component({
   moduleId: module.id,
@@ -6,9 +7,11 @@ import { Component } from '@angular/core';
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css']
 })
+
 export class AppComponent {
   title = 'Welcome to the Online Course Tracker App!';
+  courses: FirebaseListObservable<any[]>;
   constructor(af: AngularFire) {
-    this.items = af.database.list('/course');
+    this.items = af.database.list('/courses');
   }
 }
