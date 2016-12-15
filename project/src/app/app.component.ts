@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Welcome to the Online Course Tracker App!';
+  constructor(af: AngularFire) {
+    this.items = af.database.list('/course');
+  }
 }

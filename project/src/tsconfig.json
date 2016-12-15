@@ -4,15 +4,19 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "lib": ["es6", "dom"],
     "mapRoot": "/",
-    "module": "commonjs",
+    "module": "es6",
     "moduleResolution": "node",
     "noEmitOnError": true,
     "noImplicitAny": false,
-    "outDir": "../dist/",
+    "outDir": "../dist/out-tsc",
     "rootDir": ".",
     "sourceMap": true,
     "target": "es5",
+    "typeRoots": [
+      "../node_modules/@types"
+    ],
     "inlineSources": true
   },
 
