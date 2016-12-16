@@ -27,5 +27,4 @@ export const firebaseConfig = {
   bootstrap: [AppComponent]
 })
 
-export class MyApp {
-}
+export class MyApp { }

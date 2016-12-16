@@ -12,6 +12,6 @@ export class AppComponent {
   title = 'Welcome to the Online Course Tracker App!';
   courses: FirebaseListObservable<any[]>;
   constructor(af: AngularFire) {
-    this.items = af.database.list('/courses');
+    this.courses = af.database.list('/courses');
   }
 }
