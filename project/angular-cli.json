@@ -5,8 +5,8 @@
   },
   "apps": [
     {
-      "main": "src/main.ts",
-      "tsconfig": "src/tsconfig.json",
+      "main": "main.ts",
+      "tsconfig": "tsconfig.json",
       "mobile": false,
       "root": "src",
       "outDir": "dist",
