@@ -2,16 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AngularFireModule } from 'angularfire2';
-// import { Component } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
 
+import { AppComponent } from './app.component';
+import { AngularFireModule } from 'angularfire2';
+
+
+// Must export the config
 export const firebaseConfig = {
-    apiKey: "AIzaSyBE0_9cQ8vmZkj-ZYS0RYZcDCcif13uzdA",
-    authDomain: "course-tracker-46e40.firebaseapp.com",
-    databaseURL: "https://course-tracker-46e40.firebaseio.com",
-    storageBucket: "course-tracker-46e40.appspot.com",
-  };
+  apiKey: "AIzaSyBE0_9cQ8vmZkj-ZYS0RYZcDCcif13uzdA",
+  authDomain: "course-tracker-46e40.firebaseapp.com",
+  databaseURL: "https://course-tracker-46e40.firebaseio.com",
+  storageBucket: "course-tracker-46e40.appspot.com"
+};
+
 
 @NgModule({
   declarations: [
@@ -26,5 +29,4 @@ export const firebaseConfig = {
   providers: [],
   bootstrap: [AppComponent]
 })
-
-export class MyApp { }
+export class AppModule { }
