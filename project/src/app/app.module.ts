@@ -9,10 +9,10 @@ import { AngularFireModule } from 'angularfire2';
 
 // Must export the config
 export const firebaseConfig = {
-  apiKey: 'AIzaSyAnc-77gd6tRfUzGAiWn0flBoKWVBF1K04',
-  authDomain: 'businesscontacts-582f3.firebaseapp.com',
-  databaseURL: 'https://businesscontacts-582f3.firebaseio.com',
-  storageBucket: 'businesscontacts-582f3.appspot.com'
+  apiKey: "AIzaSyBE0_9cQ8vmZkj-ZYS0RYZcDCcif13uzdA",
+  authDomain: "course-tracker-46e40.firebaseapp.com",
+  databaseURL: "https://course-tracker-46e40.firebaseio.com",
+  storageBucket: "course-tracker-46e40.appspot.com"
 };
 
 

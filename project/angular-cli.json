@@ -1,10 +1,13 @@
 {
   "project": {
     "version": "1.0.0-beta.22-1",
-    "name": "businesscontacts"
+    "name": "project"
   },
   "apps": [
     {
+      "main": "src/main.ts",
+      "tsconfig": "src/tsconfig.json",
+      "mobile": false,
       "root": "src",
       "outDir": "dist",
       "assets": [
@@ -12,11 +15,8 @@
         "favicon.ico"
       ],
       "index": "index.html",
-      "main": "main.ts",
       "test": "test.ts",
-      "tsconfig": "tsconfig.json",
       "prefix": "app",
-      "mobile": false,
       "styles": [
         "styles.css"
       ],
@@ -32,17 +32,20 @@
   "packages": [],
   "e2e": {
     "protractor": {
-      "config": "./protractor.conf.js"
+      "config": "config/protractor.conf.js"
     }
   },
   "test": {
     "karma": {
-      "config": "./karma.conf.js"
+      "config": "config/karma.conf.js"
     }
   },
   "defaults": {
+    "prefix": "app",
+    "sourceDir": "src",
     "styleExt": "css",
     "prefixInterfaces": false,
+    "lazyRoutePrefix": "+",
     "inline": {
       "style": false,
       "template": false
