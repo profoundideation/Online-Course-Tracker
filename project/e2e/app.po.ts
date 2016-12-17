@@ -1,4 +1,6 @@
-export class ProjectPage {
+import { browser, element, by } from 'protractor';
+
+export class BusinesscontactsPage {
   navigateTo() {
     return browser.get('/');
   }
