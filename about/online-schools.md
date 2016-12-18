@@ -9,6 +9,21 @@
 * Pluralsight
 * Teachable
 * Watch and Code
+* Shaw Academy
+* TreeHouse
+* Lynda 
+* Linkedin
+* MemberClouds
+* Khan Academy
+* GitHub
+* Udacity
+* Google University Consortium
+* MIT Open Courseware
+* Free Food Camp
+* Code.org
+* Skill Feed
+* Skill Share
+* etc.
 
 ## Official Tutorials
 * Angular.io
