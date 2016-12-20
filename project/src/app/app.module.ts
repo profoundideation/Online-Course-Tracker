@@ -6,7 +6,6 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 
-
 // Must export the config
 export const firebaseConfig = {
   apiKey: "AIzaSyBx1urE0x8JTap584DbpElS_TtZ_ok2RYk",
@@ -14,7 +13,6 @@ export const firebaseConfig = {
   databaseURL: "https://onlinecourses-d3ce0.firebaseio.com",
   storageBucket: "onlinecourses-d3ce0.appspot.com"
 };
-
 
 @NgModule({
   declarations: [
