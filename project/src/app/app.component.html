@@ -22,39 +22,62 @@
 
 <div *ngIf="appState == 'extend'">
   <div class="row">
-    <div class="large-12 columns">
+    <div class="col-md-12">
       <button (click)="changeState('default')" class="button alert">Go Back</button>
     </div>  
   </div>  
-  
+
+<div *ngFor="let course of courses">
+  <div *ngIf="course.$key == activeKey">
+     <div class="row">
+      <div class="col-md-5 col-md-offset-1">
+          <h3>{{ course.name }}</h3>
+          <p>Platform: {{ course.school }}</p>
+          <p>Category: {{ course.category }}</p>
+          <p>Status: <!-- {{course.status }} --></p>
+          <p>Description: <!-- {{ business.description }} --></p>
+      </div>  
+      <div class="col-md-5 col-md-offset-1">
+          <h4>Course Info</h4>
+          <ul>
+             <li>MORE ...</li>
+             <li>MORE ...</li>
+             <li>MORE ...</li>
+          </ul>
+      </div>  
+     </div>
+  </div>
+</div>
+</div>
+
 <div class="container">
   <div class="row">
-  <div class="col-md-12">
-    <div *ngIf="courses">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>School</th>
-              <th>Course Name</th>
-              <th>Category</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody> 
-            <tr *ngFor="let course of courses">
-              <td>{{course.school}}</td>
-              <td>{{course.name}}</td>
-              <td>{{course.category}}</td>
-              <td>
-                <button class="btn btn-info">More</button>
-                <button class="btn btn-default">Edit</button>
-                <button class="btn btn-warning">Delete</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+    <div class="col-md-12">
+      <div *ngIf="courses">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>School</th>
+                <th>Course Name</th>
+                <th>Category</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody> 
+              <tr *ngFor="let course of courses">
+                <td>{{course.school}}</td>
+                <td>{{course.name}}</td>
+                <td>{{course.category}}</td>
+                <td>
+                  <button (click)="changeState('extend', course.$key)" class="btn btn-info">More</button>                  
+                  <button class="btn btn-default">Edit</button>
+                  <button class="btn btn-warning">Delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
     </div>
-  </div>
 </div>
 </div>
 <ul *ngFor="let course of courses">
