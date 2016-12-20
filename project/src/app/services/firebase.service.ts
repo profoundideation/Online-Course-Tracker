@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import 'rxjs/add/operator/map';
-import { Business } from '../Business';
+import { Course } from '../Course';
 import { Category } from '../Category';
 
 @Injectable()
 export class FirebaseService{
-    businesses: FirebaseListObservable<Business[]>;
+    courses: FirebaseListObservable<Course[]>;
     categories: FirebaseListObservable<Category[]>;
 
     constructor(private _af: AngularFire) {
 
     }
 
-    getBusinesses() {
-        this.businesses = this._af.database.list('/businesses') as
-        FirebaseListObservable<Business[]>
-        return this.businesses;
+    getCourses() {
+        this.courses = this._af.database.list('/courses') as
+        FirebaseListObservable<Course[]>
+        return this.courses;
     }
 
     getCategories() {
