@@ -13,9 +13,19 @@ export class FirebaseService{
 
     }
 
-    getCourses() {
-        this.courses = this._af.database.list('/courses') as
-        FirebaseListObservable<Course[]>
+getCourses(category:string = null) {
+    if(category != null){
+        this.courses = this._af.database.list('/courses', {
+                query: {
+                    orderByChild: 'category',
+                    equalTo: category
+                }
+            }) as
+            FirebaseListObservable<Course[]>
+        } else {
+            this.courses = this._af.database.list('/courses') as 
+            FirebaseListObservable<Course[]>
+        }
         return this.courses;
     }
 
