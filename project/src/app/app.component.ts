@@ -32,6 +32,11 @@ export class AppComponent implements OnInit {
         });
   }
 
+  filterCategory(category){
+    this._firebaseService.getCourses(category).subscribe(courses => {
+      this.courses = courses;
+    });
+  }
 
   changeState(state, key){
     console.log('Changing state to: '+state);
