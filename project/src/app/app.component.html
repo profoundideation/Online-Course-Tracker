@@ -20,6 +20,20 @@
   </div><!-- /.container-fluid -->
 </nav>
 
+<div class="row">
+  <div class="col-md-6">
+    <button class="button">Add Course(s)</button>
+  </div>  
+  <div class="col-md-6">
+    <label> Filter Category
+        <select (change)="filterCategory(filteredCategory.value)" #filteredCategory>
+            <option value="0">Select</option>
+            <option *ngFor="let category of categories" value="{{category.name}}">{{ category.name }}</option>
+        </select>
+    </label>
+  </div>  
+</div>
+
 <div *ngIf="appState == 'extend'" class="container-fluid">
   <div class="row">
     <div class="col-md-12">
