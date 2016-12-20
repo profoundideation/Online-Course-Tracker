@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from './services/firebase.service';
-import { Business } from './Business';
+import { Course } from './Course';
 import { Category } from './Category';
 
 @Component({
@@ -10,17 +10,17 @@ import { Category } from './Category';
   providers: [FirebaseService]
 })
 export class AppComponent implements OnInit {
-  businesses:Business[];
+  courses:Course[];
   categories:Category[];
 
   constructor(private _firebaseService: FirebaseService) {
   }
 
   ngOnInit() {
-    this._firebaseService.getBusinesses()
-        .subscribe(businesses => {
+    this._firebaseService.getCourses()
+        .subscribe(courses => {
             //console.log(businesses);
-            this.businesses = businesses;
+            this.courses = courses;
         });
 
     this._firebaseService.getCategories()
