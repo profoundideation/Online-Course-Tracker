@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from './services/firebase.service';
 import { Course } from './Course';
 import { Category } from './Category';
+import { Status } from './Status';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +13,14 @@ import { Category } from './Category';
 export class AppComponent implements OnInit {
   courses:Course[];
   categories:Category[];
+  statuses:Status[];
   appState: string;
   activeKey: string;
+  activeSchool: string;
+  activeName: string;
+  activeUrl: string;
+  activeCategory: string;
+  activeStatus: string;
 
   constructor(private _firebaseService: FirebaseService) {
   }
@@ -28,6 +35,12 @@ export class AppComponent implements OnInit {
       .subscribe(categories => {
         //console.log(categories);
         this.categories = categories;
+      });
+
+    this._firebaseService.getStatuses()
+      .subscribe(statuses => {
+        //console.log(categories);
+        this.statuses = statuses;
       });
   }
 
@@ -44,7 +57,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  changeState(state, key){
+  changeState(state, key:any = null){
     console.log('Changing state to: '+state);
     if(key){
       console.log('Changing key to: '+key);
@@ -57,7 +70,8 @@ export class AppComponent implements OnInit {
        school: string,
        name: string,
        url: string,
-       category: string) {
+       category: string,
+       status: string) {
          var created_at = new Date().toString();
  
          var newCourse = {
@@ -65,6 +79,7 @@ export class AppComponent implements OnInit {
            name: name,
            url: url,
            category: category,
+           status: status,
            created_at: created_at
          }
  
@@ -81,14 +96,15 @@ export class AppComponent implements OnInit {
        this.activeName = course.name;
        this.activeUrl = course.url;
        this.activeCategory = course.category;
+       this.activeStatus = course.status;
      }
      
      updateCourse() {
          var updCourse = {
-         school: this.school,  
+         school: this.activeSchool,  
          name: this.activeName,
-         category: this.activeCategory,        
-         description: this.activeDescription        
+         url: this.activeUrl,
+         category: this.activeCategory      
        }
        
        this._firebaseService.updateCourse(this.activeKey, updCourse);
