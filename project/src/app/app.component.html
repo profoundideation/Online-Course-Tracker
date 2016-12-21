@@ -58,10 +58,17 @@
                   school.value,
                   name.value,
                   url.value,
-                  category.value)">  
+                  category.value,
+                  status.value, 
+                  description.value,
+                  notes.value)">  
           <div class="form-group">
             <label for="CourseName">Course Name</label>
               <input class="form-control" type="text" id="CourseName" placeholder="Course Name" #name>
+          </div>
+          <div class="form-group">
+            <label for="SchoolName">School Name</label>
+              <input class="form-control" type="text" id="SchoolName" placeholder="School Name" #school>
           </div>
           <div class="form-group">
               <label for="CourseStatus">Status</label>
@@ -80,13 +87,11 @@
           </div>
           <div class="form-group">
               <label>Description</label>
-                  <textarea class="form-control" id="CourseDescription" placeholder="Add a brief Description" #description></textarea>
-            <p class="help-block">Add a brief Description.</p>
+                  <textarea class="form-control" id="CourseDescription" placeholder="Add a brief Description" #description></textarea>            
           </div>
           <div class="form-group">
               <label>Comments / Notes</label>
-                  <textarea class="form-control" id="CourseDescription" placeholder="Add Comments / Notes Here." #notes></textarea>
-            <p class="help-block">Add Comments / Notes Here.</p>
+                  <textarea class="form-control" id="CourseDescription" placeholder="Add Comments / Notes Here." #notes></textarea>            
           </div>
           <button type="submit" class="btn btn-danger">Submit</button>
         </form>
