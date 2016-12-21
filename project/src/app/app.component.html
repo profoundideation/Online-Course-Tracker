@@ -130,34 +130,74 @@
 <div *ngIf="appState == 'edit'" class="row jumbotron">
   <div class="col-md-10 col-md-offset-1">
     <h3>Edit Course(s)</h3>
+        <form (submit)="updateCourse()">  
+          <div class="row">
+            <div class="col-md-12">
+                  <label> School
+                    <input type="text" [(ngModel)]="activeSchool" name="activeSchool" placeholder="Course Name" #school>
+                  </label>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-md-6">
 
-      The following is an example Form: feel free to replace it.
+                <div class="form-group">
+                  <label> Course
+                    <input type="text" [(ngModel)]="activeName" name="activeName" placeholder="Course Name" #name>
+                  </label>
+                </div>  
+              </div>  
+              <div class="col-md-6">
+                <label>Category
+                  <select [(ngModel)]="activeCategory" name="activeCategory" #category>
+                    <option value="0">Select</option>
+                    <option *ngFor="let category of categories" value="{{ category.name }}">{{ category.name }}</option>
+                  </select>
+                </label>
+              </div>
+            </div>       
 
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputFile">File input</label>
-          <input type="file" id="exampleInputFile">
-          <p class="help-block">Example block-level help text here.</p>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"> Check Me Out
-          </label>
-        </div>
-        <button type="submit" class="btn btn-danger">Submit</button>
-      </form>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>URL
+                    <input type="text" [(ngModel)]="activeUrl" name="activeUrl" placeholder="Course URL" #url>
+                  </label>
+              </div>
+              <div class="col-md-6">
+                <label>Description
+                  <textarea #description></textarea>
+                </label>
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                   <label>Course Status
+                  <select [(ngModel)]="activeStatus" name="activeStatus" #status>
+                    <option value="0">Select</option>
+                    <option *ngFor="let status of statuses" value="{{ status.name }}">{{ status.name }}</option>
+                  </select>
+                </label>
+                </div>
+                <div class="col-md-6">
+                  <label>Comments
+                    <textarea #notes></textarea>
+                  </label>
+                </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <input type="submit" class="btn btn-danger" value="Submit">  
+              </div>  
+            </div>
+        </form>
+
+
   </div>
 </div>
 
-<!-- EDIT FORM -->
+<!-- EXTEND SECTION -->
 
 <div *ngIf="appState == 'extend'" class="container-fluid">
   <div class="row">

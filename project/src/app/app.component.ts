@@ -104,7 +104,8 @@ export class AppComponent implements OnInit {
          school: this.activeSchool,  
          name: this.activeName,
          url: this.activeUrl,
-         category: this.activeCategory      
+         category: this.activeCategory,
+         status: this.activeStatus      
        }
        
        this._firebaseService.updateCourse(this.activeKey, updCourse);
