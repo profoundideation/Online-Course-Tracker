@@ -23,7 +23,7 @@
 <div class="well">
   <div class="row">
     <div class="col-md-6">
-      <button class="button">Add Course(s)</button>
+      <button (click)="changeState('add')" class="btn btn-info">Add Course(s)</button>
     </div>  
     <div class="col-md-6">
       <label> Filter Category
@@ -36,22 +36,32 @@
   </div>
 </div>
 
-
-
-  <div class="well" *ngIf="appState == 'add'" class="row">
-    <div class="row">
-      <div class="col-md-12">
-        <h3>Add Business</h3>
+<div *ngIf="appState == 'add'" class="row jumbotron">
+  <div class="">
+    <div class="col-md-10 col-md-offset-1">
+      <h3>Add a Course</h3>
         <form (submit)="addCourse(
           school.value,
           name.value, 
           url.value,
-          category.value)"></form>
-      </div>
+          category.value)">            
+              <div class="col-md-6">
+                <label> Course
+                  <input type="text" placeholder="Course Name" #course>
+                </label>
+              </div>  
+              <div class="col-md-6">
+                <label>Category
+                  <select #category>
+                    <option value="0">Select</option>
+                    <option *ngFor="let category of categories" value="{{ category.name }}">{{ category.name }}</option>
+                  </select> 
+                </label>
+              </div>              
+        </form>
     </div>
   </div>
-
-
+</div>
 
 <div *ngIf="appState == 'extend'" class="container-fluid">
   <div class="row">
@@ -83,7 +93,7 @@
         <div class="col-md-6">
           <div class="panel panel-info">
             <div class="panel-heading">
-              <h4 class="panel-title">Course Info</h4>
+              <h4 class="panel-title">Course Info.</h4>
             </div>
             <div class="panel-body">
               <ul>
@@ -120,8 +130,8 @@
                 <td>{{ course.category }}</td>
                 <td>
                   <button (click)="changeState('extend', course.$key)" class="btn btn-info">More</button>                  
-                  <button class="btn btn-default">Edit</button>
-                  <button class="btn btn-warning">Delete</button>
+                  <button (click)="showEdit(business)" class="btn btn-default">Edit</button>
+                  <button (click)="deleteBusiness(business.$key)" class="btn btn-warning">Delete</button>                  
                 </td>
               </tr>
             </tbody>
