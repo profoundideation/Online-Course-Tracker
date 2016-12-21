@@ -55,65 +55,44 @@
     <div class="col-md-10 col-md-offset-1">
       <h3>Add a Course</h3>
         <form (submit)="addCourse(
-          school.value,
-          name.value,
-          url.value,
-          category.value)">  
-            <div class="row">
-              <div class="col-md-6">
-
-                <div class="form-group">
-                  <label> Course
-                    <input type="text" placeholder="Course Name" #course>
-                  </label>
-                </div>  
-              </div>  
-              <div class="col-md-6">
-                <label>Category
-                  <select #category>
-                    <option value="0">Select</option>
-                    <option *ngFor="let category of categories" value="{{ category.name }}">{{ category.name }}</option>
-                  </select>
-                </label>
-              </div>
-            </div>       
-
-              <div class="row">
-                <div class="col-md-6">
-                  <label>URL
-                    <input type="text" placeholder="Course URL" #url>
-                  </label>
-              </div>
-              <div class="col-md-6">
-                <label>Description
-                  <textarea #description></textarea>
-                </label>
-              </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6">
-                  <label>Status
-                    <input type="text" placeholder="Course Status" #status>
-                  </label>
-                </div>
-                <div class="col-md-6">
-                  <label>Comments
-                    <textarea #notes></textarea>
-                  </label>
-                </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-12">
-                <input type="submit" class="btn btn-danger" value="Submit">  
-              </div>  
-            </div>
+                  school.value,
+                  name.value,
+                  url.value,
+                  category.value)">  
+          <div class="form-group">
+            <label for="CourseName">Course Name</label>
+              <input class="form-control" type="text" id="CourseName" placeholder="Course Name" #name>
+          </div>
+          <div class="form-group">
+              <label for="CourseStatus">Status</label>
+                <input class="form-control" type="text" id="CourseStatus" placeholder="Course Status" #status>      
+          </div>
+          <div class="form-group">
+            <label>Category</label>
+                <select #category class="form-control">
+                  <option value="0">Select</option>
+                  <option *ngFor="let category of categories" value="{{ category.name }}">{{ category.name }}</option>
+                </select>                
+          </div>
+          <div class="form-group">
+            <label>URL</label>
+                <input type="text" class="form-control" id="CourseURL" placeholder="Course URL" #url>                 
+          </div>
+          <div class="form-group">
+              <label>Description</label>
+                  <textarea class="form-control" id="CourseDescription" placeholder="Add a brief Description" #description></textarea>
+            <p class="help-block">Add a brief Description.</p>
+          </div>
+          <div class="form-group">
+              <label>Comments / Notes</label>
+                  <textarea class="form-control" id="CourseDescription" placeholder="Add Comments / Notes Here." #notes></textarea>
+            <p class="help-block">Add Comments / Notes Here.</p>
+          </div>
+          <button type="submit" class="btn btn-danger">Submit</button>
         </form>
     </div>
   </div>
 </div>
-
 
 <!-- EDIT FORM -->
 <div *ngIf="appState == 'edit'" class="row jumbotron">
@@ -165,13 +144,13 @@
             </div>
             <div class="panel-body">
               <p>Platform: {{ course.school }}</p>
-            <p>Category: {{ course.category }}</p>
-            <p>Status: 60%</p>
-              <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">60%
+              <p>Category: {{ course.category }}</p>
+              <p>Status: 60%</p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">60%
+                  </div>
                 </div>
-              </div>
-            <p>Description: <!-- {{ course.description }} --></p>
+              <p>Description: <!-- {{ course.description }} --></p>
             </div>
           </div>
         </div>
