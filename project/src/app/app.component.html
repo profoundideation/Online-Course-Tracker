@@ -50,8 +50,7 @@
   </div>
 </div>
 
-<div *ngIf="appState == 'add'" class="row jumbotron">
-  <div class="">
+<div *ngIf="appState == 'add'" class="row jumbotron">  
     <div class="col-md-10 col-md-offset-1">
       <h3>Add a Course</h3>
         <form (submit)="addCourse(
@@ -66,10 +65,12 @@
             <label for="CourseName">Course Name</label>
               <input class="form-control" type="text" id="CourseName" placeholder="Course Name" #name>
           </div>
+          
           <div class="form-group">
             <label for="SchoolName">School Name</label>
               <input class="form-control" type="text" id="SchoolName" placeholder="School Name" #school>
           </div>
+          
           <div class="form-group">
               <label for="CourseStatus">Status</label>
                 <input class="form-control" type="text" id="CourseStatus" placeholder="Course Status" #status>      
@@ -81,25 +82,27 @@
                   <option *ngFor="let category of categories" value="{{ category.name }}">{{ category.name }}</option>
                 </select>                
           </div>
+          
           <div class="form-group">
-            <label>URL</label>
+            <label for="CourseURL">URL</label>
                 <input type="text" class="form-control" id="CourseURL" placeholder="Course URL" #url>                 
           </div>
+          
           <div class="form-group">
-              <label>Description</label>
+              <label for="CourseDescription">Description</label>
                   <textarea class="form-control" id="CourseDescription" placeholder="Add a brief Description" #description></textarea>            
           </div>
           <div class="form-group">
-              <label>Comments / Notes</label>
-                  <textarea class="form-control" id="CourseDescription" placeholder="Add Comments / Notes Here." #notes></textarea>            
+              <label for="CourseNotes">Comments / Notes</label>
+                  <textarea class="form-control" id="CourseNotes" placeholder="Add Comments / Notes Here." #notes></textarea>            
           </div>
+          
           <button type="submit" class="btn btn-danger">Submit</button>
         </form>
     </div>
-  </div>
 </div>
 
-<!-- EDIT FORM -->
+<!-- EDIT FORM START -->
 <div *ngIf="appState == 'edit'" class="row jumbotron">
   <div class="col-md-10 col-md-offset-1">
     <h3>Edit Course(s)</h3>
@@ -130,7 +133,8 @@
   </div>
 </div>
 
-<!-- EDIT FORM -->
+<!-- EDIT FORM ENDS -->
+
 
 <div *ngIf="appState == 'extend'" class="container-fluid">
   <div class="row">
@@ -150,12 +154,13 @@
             <div class="panel-body">
               <p>Platform: {{ course.school }}</p>
               <p>Category: {{ course.category }}</p>
+              
               <p>Status: {{ course.status }}</p>
                 <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">60%  
-                  </div>
-                <p>Description: <!-- {{ course.description }} --></p>
-              </div>
+                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">60%</div>                  
+                </div>
+              
+            </div>
           </div>
         </div>
         <div class="col-md-6">
@@ -165,7 +170,7 @@
             </div>
             <div class="panel-body">
               <ul>
-                <li>MORE ...</li>
+                <li><p>Description: <!-- {{ course.description }} --></p></li>
                 <li>MORE ...</li>
                 <li>MORE ...</li>
                 <li>Share: ...</li>
