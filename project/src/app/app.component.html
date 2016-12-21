@@ -101,9 +101,12 @@
 
             <div class="row">
                 <div class="col-md-6">
-                  <label>Status
-                    <input type="text" placeholder="Course Status" #status>
-                  </label>
+                   <label>Course Status
+                  <select #status>
+                    <option value="0">Select</option>
+                    <option *ngFor="let status of statuses" value="{{ status.name }}">{{ status.name }}</option>
+                  </select>
+                </label>
                 </div>
                 <div class="col-md-6">
                   <label>Comments

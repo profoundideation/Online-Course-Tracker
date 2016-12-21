@@ -1,37 +1,31 @@
-{
-    "0" : {
-      "school" : "Udemy",
-      "name" : "Angular 2 Essentials",
-      "url" : "www.udemy.com/course1",
-      "category" : "Web Development",
-      "status" : "Started"
-    },
-    "1" : {
-      "school" : "Udacity",
-      "name" : "Nanodegree - Mobile Development",
-      "url" : "www.udacity.com/course1",
-      "category" : "Mobile Development",
-      "status" : "Finished"
-    },
-    "2" : {
-      "school" : "Lynda",
-      "name" : "NodeJS Essential",
-      "url" : "www.lynda.com/course1",
-      "category" : "Web Development",
-      "status" : "Not started"
-    },
-    "3" : {
-      "school" : "Plurasight",
-      "name" : "Unity3D from noob to pro",
-      "url" : "www.plurasight.com/course1",
-      "category" : "Game Development",
-      "status" : "Started"
-    },
-    "4" : {
-      "school" : "FCC",
-      "name" : "Ionic 2",
-      "url" : "www.fcc.com/course1",
-      "category" : "Mobile Development",
-      "status" : "Started"
-    }
-}
+[ {
+  "category" : "Web Development",
+  "name" : "Angular 2 Essentials",
+  "school" : "Udemy",
+  "status" : "0%-25%",
+  "url" : "www.udemy.com/course1"
+}, {
+  "category" : "Mobile Development",
+  "name" : "Nanodegree - Mobile Development",
+  "school" : "Udacity",
+  "status" : "Finished",
+  "url" : "www.udacity.com/course1"
+}, {
+  "category" : "Web Development",
+  "name" : "NodeJS Essential",
+  "school" : "Lynda",
+  "status" : "Not started",
+  "url" : "www.lynda.com/course1"
+}, {
+  "category" : "Game Development",
+  "name" : "Unity3D from noob to pro",
+  "school" : "Plurasight",
+  "status" : "50%-75%",
+  "url" : "www.plurasight.com/course1"
+}, {
+  "category" : "Mobile Development",
+  "name" : "Ionic 2",
+  "school" : "FCC",
+  "status" : "75%-99%",
+  "url" : "www.fcc.com/course1"
+} ]
