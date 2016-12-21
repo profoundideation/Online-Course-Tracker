@@ -24,15 +24,15 @@
   <div class="row">
     <div class="col-md-6">
       <button (click)="changeState('add')" class="btn btn-info">Add Course(s)</button>
-    </div>  
+    </div>
     <div class="col-md-6">
       <label> Filter Category
           <select (change)="filterCategory(filteredCategory.value)" #filteredCategory>
-              <option value="0">Select</option>
+              <option value="All">All</option>
               <option *ngFor="let category of categories" value="{{category.name}}">{{ category.name }}</option>
           </select>
       </label>
-    </div>  
+    </div>
   </div>
 </div>
 
@@ -42,22 +42,22 @@
       <h3>Add a Course</h3>
         <form (submit)="addCourse(
           school.value,
-          name.value, 
+          name.value,
           url.value,
-          category.value)">            
+          category.value)">
               <div class="col-md-6">
                 <label> Course
                   <input type="text" placeholder="Course Name" #course>
                 </label>
-              </div>  
+              </div>
               <div class="col-md-6">
                 <label>Category
                   <select #category>
                     <option value="0">Select</option>
                     <option *ngFor="let category of categories" value="{{ category.name }}">{{ category.name }}</option>
-                  </select> 
+                  </select>
                 </label>
-              </div>              
+              </div>
         </form>
     </div>
   </div>
@@ -67,8 +67,8 @@
   <div class="row">
     <div class="col-md-12">
       <button (click)="changeState('default')" class="button alert">Go Back</button>
-    </div>  
-  </div>  
+    </div>
+  </div>
 
   <div *ngFor="let course of courses">
     <div *ngIf="course.$key == activeKey">
@@ -85,11 +85,11 @@
               <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">60%
                 </div>
-              </div>            
+              </div>
             <p>Description: <!-- {{ business.description }} --></p>
             </div>
           </div>
-        </div>  
+        </div>
         <div class="col-md-6">
           <div class="panel panel-info">
             <div class="panel-heading">
@@ -103,8 +103,8 @@
                 <li>Share: ...</li>
               </ul>
             </div>
-          </div>            
-        </div>  
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -123,15 +123,15 @@
                 <th></th>
               </tr>
             </thead>
-            <tbody> 
+            <tbody>
               <tr *ngFor="let course of courses">
                 <td>{{ course.school }}</td>
                 <td>{{ course.name }}</td>
                 <td>{{ course.category }}</td>
                 <td>
-                  <button (click)="changeState('extend', course.$key)" class="btn btn-info">More</button>                  
+                  <button (click)="changeState('extend', course.$key)" class="btn btn-info">More</button>
                   <button (click)="showEdit(business)" class="btn btn-default">Edit</button>
-                  <button (click)="deleteBusiness(business.$key)" class="btn btn-warning">Delete</button>                  
+                  <button (click)="deleteBusiness(business.$key)" class="btn btn-warning">Delete</button>
                 </td>
               </tr>
             </tbody>
