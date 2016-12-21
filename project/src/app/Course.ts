@@ -4,5 +4,6 @@ export interface Course {
     name: string;
     url?: string;
     category: string;
+    status:string;
     created_at: string;
 }

@@ -17,7 +17,7 @@
         <li><a href="#">About</a></li>       
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li><a href="#">Blog</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -25,7 +25,7 @@
             <li><a href="#">Log In</a></li>        
             <li><a href="#">Log Out</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">Support</a></li>
           </ul>
         </li>
       </ul>
@@ -58,13 +58,21 @@
           school.value,
           name.value,
           url.value,
-          category.value)">  
+          category.value,
+          status.value)">  
+          <div class="row">
+            <div class="col-md-12">
+                  <label> School
+                    <input type="text" placeholder="Course Name" #school>
+                  </label>
+            </div>
+          </div>
             <div class="row">
               <div class="col-md-6">
 
                 <div class="form-group">
                   <label> Course
-                    <input type="text" placeholder="Course Name" #course>
+                    <input type="text" placeholder="Course Name" #name>
                   </label>
                 </div>  
               </div>  
@@ -93,9 +101,12 @@
 
             <div class="row">
                 <div class="col-md-6">
-                  <label>Status
-                    <input type="text" placeholder="Course Status" #status>
-                  </label>
+                   <label>Course Status
+                  <select #status>
+                    <option value="0">Select</option>
+                    <option *ngFor="let status of statuses" value="{{ status.name }}">{{ status.name }}</option>
+                  </select>
+                </label>
                 </div>
                 <div class="col-md-6">
                   <label>Comments
@@ -166,7 +177,7 @@
             <div class="panel-body">
               <p>Platform: {{ course.school }}</p>
             <p>Category: {{ course.category }}</p>
-            <p>Status: 60%</p>
+            <p>Status: {{ course.status }}</p>
               <div class="progress">
                 <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">60%
                 </div>
