@@ -44,7 +44,8 @@
           school.value,
           name.value, 
           url.value,
-          category.value)">            
+          category.value)">  
+            <div class="row">
               <div class="col-md-6">
                 <label> Course
                   <input type="text" placeholder="Course Name" #course>
@@ -57,7 +58,35 @@
                     <option *ngFor="let category of categories" value="{{ category.name }}">{{ category.name }}</option>
                   </select> 
                 </label>
-              </div>              
+              </div>       
+            </div>       
+
+              <div class="row">
+                <div class="col-md-6">
+                  <label>URL
+                    <input type="text" placeholder="Years In Business" #url>
+                  </label>
+              </div>
+              <div class="col-md-6">
+                <label>Description
+                  <textarea #description></textarea>
+                </label>
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                  <label>Status
+                    <input type="text" placeholder="Years In Business" #status>
+                  </label>
+                </div>
+                <div class="col-md-6">
+                  <label>Comments
+                    <textarea #notes></textarea>
+                  </label>
+                </div>
+            </div>
+
         </form>
     </div>
   </div>
