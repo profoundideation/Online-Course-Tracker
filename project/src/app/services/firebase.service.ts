@@ -9,9 +9,7 @@ export class FirebaseService{
     courses: FirebaseListObservable<Course[]>;
     categories: FirebaseListObservable<Category[]>;
 
-    constructor(private _af: AngularFire) {
-
-    }
+    constructor(private _af: AngularFire) { }
 
 getCourses(category:string = null) {
     if(category != null){
@@ -33,5 +31,17 @@ getCourses(category:string = null) {
         this.categories = this._af.database.list('/categories') as
         FirebaseListObservable<Category[]>
         return this.categories;
+    }
+
+    addCourse(newCourse) {
+        return this.courses.push(newCourse);
+    }
+        
+    updateCourse(key, updCourse){
+        return this.courses.update(key, updCourse);
+    }
+    
+    deleteCourse(key){
+        return this.courses.remove(key);
     }
 }
