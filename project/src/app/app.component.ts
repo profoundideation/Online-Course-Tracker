@@ -14,6 +14,11 @@ export class AppComponent implements OnInit {
   categories:Category[];
   appState: string;
   activeKey: string;
+  activeSchool: string;
+  activeName: string;
+  activeUrl: string;
+  activeCategory: string;
+  activeStatus: string;
 
   constructor(private _firebaseService: FirebaseService) {
   }
@@ -44,7 +49,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  changeState(state, key){
+  changeState(state, key:any = null){
     console.log('Changing state to: '+state);
     if(key){
       console.log('Changing key to: '+key);
@@ -65,6 +70,7 @@ export class AppComponent implements OnInit {
            name: name,
            url: url,
            category: category,
+           status: status,
            created_at: created_at
          }
  
@@ -81,14 +87,15 @@ export class AppComponent implements OnInit {
        this.activeName = course.name;
        this.activeUrl = course.url;
        this.activeCategory = course.category;
+       this.activeStatus = course.status;
      }
      
      updateCourse() {
          var updCourse = {
-         school: this.school,  
+         school: this.activeSchool,  
          name: this.activeName,
-         category: this.activeCategory,        
-         description: this.activeDescription        
+         url: this.activeUrl,
+         category: this.activeCategory      
        }
        
        this._firebaseService.updateCourse(this.activeKey, updCourse);
