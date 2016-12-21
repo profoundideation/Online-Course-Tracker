@@ -10,8 +10,8 @@ import { Category } from './Category';
   providers: [FirebaseService]
 })
 export class AppComponent implements OnInit {
-  courses:Course[];
-  categories:Category[];
+  courses: Course[];
+  categories: Category[];
   appState: string;
   activeKey: string;
 
@@ -47,4 +47,24 @@ export class AppComponent implements OnInit {
     this.appState = state;
   }
 
+    addCourse(
+      school: string,
+      name: string,
+      url: string,
+      category: string) {
+        var created_at = new Date().toString();
+
+        var newCourse = {
+          school: school,
+          name: name,
+          url: url,
+          category: category,
+          created_at:created_at
+        }
+
+        //console.log(newCourse);      
+        this._firebaseService.addCourse(newCourse);      
+        // this.changeState('default');
+        
+    }
 }
