@@ -4,7 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 
+import { routing, appRoutingProviders } from './app.routing';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 // Must export the config
 export const firebaseConfig = {
