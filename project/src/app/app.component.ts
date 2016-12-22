@@ -1,14 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from './services/firebase.service';
+// import { HTTP_PROVIDERS } from '@angular/http';
 import { Course } from './Course';
 import { Category } from './Category';
 import { Status } from './Status';
-import { Reviews } from './Reviews';
+// import { Reviews } from './Reviews';
+import { ReviewComponent } from './components/review.component';
+// import { GithubService } from './services/github.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.css'],  
+  // directives:[ReviewComponent],
   providers: [FirebaseService]
 })
 
