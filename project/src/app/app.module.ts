@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 
 import { AppComponent } from './app.component';
+import { AddformComponent } from './components/addform.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -16,7 +17,8 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddformComponent
   ],
   imports: [
     BrowserModule,
