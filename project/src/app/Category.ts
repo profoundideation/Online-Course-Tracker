@@ -1,4 +1,4 @@
-export interface Category{
+export interface Category {
     $key?:string;
     name?:string;
 }
