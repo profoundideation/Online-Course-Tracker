@@ -13,7 +13,7 @@ import { ReviewComponent } from './components/review.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],  
   // directives:[ReviewComponent],
-  providers: [FirebaseService]
+  providers: [FirebaseService, /* GithubService, HTTP_PROVIDERS */]
 })
 
 export class AppComponent implements OnInit {
