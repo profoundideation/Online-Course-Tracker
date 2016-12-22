@@ -6,9 +6,9 @@ import { AngularFireModule } from 'angularfire2';
 
 import { routing, appRoutingProviders } from './app.routing';
 import { AppComponent } from './app.component';
-import { AddformComponent } from './components/addform.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { AddformComponent } from './components/addform/addform.component';
 
 
 // Must export the config

@@ -5,7 +5,8 @@ import { Course } from './Course';
 import { Category } from './Category';
 import { Status } from './Status';
 // import { Reviews } from './Reviews';
-import { ReviewComponent } from './components/review.component';
+// import { ReviewComponent } from './components/review/review.component';
+import { AddformComponent } from './components/addform/addform.component';
 // import { GithubService } from './services/github.service';
 
 @Component({
