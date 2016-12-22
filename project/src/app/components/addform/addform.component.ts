@@ -10,10 +10,9 @@ import { Status } from '../Status';
 // import { GithubService } from './services/github.service';
 
 
-@Component({
-  moduleId: module.id,
+@Component({  
   selector: 'addform',
-  templateUrl: 'addform.component.html',
+  templateUrl: 'addform.component.html',  
   styleUrls:  ['addform.component.css']
 })
 
