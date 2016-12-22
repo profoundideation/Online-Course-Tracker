@@ -3,6 +3,7 @@ import { FirebaseService } from './services/firebase.service';
 import { Course } from './Course';
 import { Category } from './Category';
 import { Status } from './Status';
+import { Reviews } from './Reviews';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ import { Status } from './Status';
   styleUrls: ['./app.component.css'],
   providers: [FirebaseService]
 })
+
 export class AppComponent implements OnInit {
   courses:Course[];
   categories:Category[];
@@ -118,5 +120,4 @@ export class AppComponent implements OnInit {
        
        this.changeState('default');
      }
-
 }

@@ -1,4 +1,4 @@
-export interface Status{
+export interface Status {
     $key?:string;
     name?:string;
 }

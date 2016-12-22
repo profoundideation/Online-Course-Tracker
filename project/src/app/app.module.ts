@@ -27,4 +27,5 @@ export const firebaseConfig = {
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
