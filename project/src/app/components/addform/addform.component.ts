@@ -27,7 +27,7 @@ export class AddformComponent implements OnInit {
 
     constructor(private _firebaseService: FirebaseService) {} 
     
-      ngOnInit() {
+    ngOnInit() {
         this._firebaseService.getCourses()
           .subscribe(courses => {        
             this.courses = courses;
@@ -45,7 +45,7 @@ export class AddformComponent implements OnInit {
             //console.log(categories);
             this.statuses = statuses;
           });
-      }
+    }
       
       changeState(state, key:any = null){
         console.log('Changing state to: '+state);
@@ -56,14 +56,13 @@ export class AddformComponent implements OnInit {
         this.appState = state;
       }
       
-      addCourse(
-           school: string,
-           name: string,
-           url: string,
-           category: string,
-           status: string) {
-             let created_at = new Date().toString();
-     
+    addCourse(
+          school: string,
+          name: string,
+          url: string,
+          category: string,
+          status: string) {
+             let created_at = new Date().toString();     
              var newCourse = {
                school: school,
                name: name,
@@ -73,9 +72,8 @@ export class AddformComponent implements OnInit {
                created_at: created_at
              }
      
-             console.log(newCourse);      
-             this._firebaseService.addCourse(newCourse);      
-                  
+             // console.log(newCourse);      
+             this._firebaseService.addCourse(newCourse);                        
              this.changeState('default');
-          }              
+          }
 }

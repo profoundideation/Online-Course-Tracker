@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject, forwardRef, Input } from '@angular/core';
 import { FirebaseService } from './services/firebase.service';
 // import { HTTP_PROVIDERS } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 import { Course } from './Course';
 import { Category } from './Category';
@@ -16,14 +17,12 @@ import { ExtendsectionComponent } from './components/extendsection/extendsection
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  declarations: [ EditformComponent ],  
+  // declarations: [ EditformComponent ],  
   /* declarations: [ ], */ /* ReviewComponent,  ExtendsectionComponent */
   providers: [ FirebaseService, /* GithubService, HTTP_PROVIDERS */]
 })
 
 export class AppComponent implements OnInit {
-  courseTitle:string : any;
-
   courses: Course[];
   categories: Category[];
   statuses: Status[];
@@ -37,8 +36,6 @@ export class AppComponent implements OnInit {
 
   constructor(private _firebaseService: FirebaseService) {
   }
-
-  
 
   ngOnInit() {
     this._firebaseService.getCourses()
