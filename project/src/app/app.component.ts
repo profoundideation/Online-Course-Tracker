@@ -8,8 +8,8 @@ import { Category } from './Category';
 import { Status } from './Status';
 
 import { AddformComponent } from './components/addform/addform.component';
-import { EditformComponent } from './components/editform/editform.component';
-import { ExtendsectionComponent } from './components/extendsection/extendsection.component';
+// import { EditformComponent } from './components/editform/editform.component';
+// import { ExtendsectionComponent } from './components/extendsection/extendsection.component';
 // import { ReviewComponent } from './components/review/review.component';
 // import { GithubService } from './services/github.service';
 
@@ -78,6 +78,30 @@ export class AppComponent implements OnInit {
     this.appState = state;
   } 
      
+
+      showEdit(course) {
+       this.changeState('edit', course.$key);
+       this.activeSchool = course.school,
+       this.activeName = course.name;
+       this.activeUrl = course.url;
+       this.activeCategory = course.category;
+       this.activeStatus = course.status;
+     }
+     
+     updateCourse() {
+         var updCourse = {
+         school: this.activeSchool,  
+         name: this.activeName,
+         url: this.activeUrl,
+         category: this.activeCategory,
+         status: this.activeStatus      
+       }
+       
+       this._firebaseService.updateCourse(this.activeKey, updCourse);       
+       this.changeState('default');
+     }      
+
+
      deleteCourse(key) {
        this._firebaseService.deleteCourse(key);       
        this.changeState('default');
