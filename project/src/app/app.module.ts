@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 // import { HomeComponent } from './components/home/home.component';
 // import { ProfileComponent } from './components/profile/profile.component';
 import { AddformComponent } from './components/addform/addform.component';
-
+import { EditformComponent } from './components/editform/editform.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -22,7 +22,8 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    AddformComponent
+    AddformComponent,
+    EditformComponent
     // HeaderComponent, 
     // HomeComponent, 
     // FooterComponent, 
