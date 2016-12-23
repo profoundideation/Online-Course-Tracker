@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, forwardRef, Input } from '@angular/core';
 import { FirebaseService } from './services/firebase.service';
 // import { HTTP_PROVIDERS } from '@angular/http';
 
@@ -6,20 +6,24 @@ import { Course } from './Course';
 import { Category } from './Category';
 import { Status } from './Status';
 
-// import { ReviewComponent } from './components/review/review.component';
 import { AddformComponent } from './components/addform/addform.component';
 import { EditformComponent } from './components/editform/editform.component';
+import { ExtendsectionComponent } from './components/extendsection/extendsection.component';
+// import { ReviewComponent } from './components/review/review.component';
 // import { GithubService } from './services/github.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],  
-  // directives:[ReviewComponent],
-  providers: [FirebaseService, /* GithubService, HTTP_PROVIDERS */]
+  styleUrls: ['./app.component.css'],
+  declarations: [ EditformComponent ],  
+  /* declarations: [ ], */ /* ReviewComponent,  ExtendsectionComponent */
+  providers: [ FirebaseService, /* GithubService, HTTP_PROVIDERS */]
 })
 
 export class AppComponent implements OnInit {
+  courseTitle:string : any;
+
   courses: Course[];
   categories: Category[];
   statuses: Status[];
@@ -33,6 +37,8 @@ export class AppComponent implements OnInit {
 
   constructor(private _firebaseService: FirebaseService) {
   }
+
+  
 
   ngOnInit() {
     this._firebaseService.getCourses()
@@ -73,12 +79,10 @@ export class AppComponent implements OnInit {
       this.activeKey = key;
     }
     this.appState = state;
-  }
- 
+  } 
      
      deleteCourse(key) {
-       this._firebaseService.deleteCourse(key);
-       
+       this._firebaseService.deleteCourse(key);       
        this.changeState('default');
      }
 }

@@ -1,7 +1,5 @@
 <navbar></navbar>
 <addform></addform>
-<editform></editform>
-<extendsection></extendsection>
 
 <!-- Table of Courses Start -->
 <div class="container-fluid">
@@ -23,8 +21,9 @@
                 <td>{{ course.name }}</td>
                 <td>{{ course.category }}</td>
                 <td>
-                  <button (click)="changeState('extend', course.$key)" class="btn btn-info">More</button>  
-                  <button (click)="showEdit(course)" class="btn btn-default">Edit</button>                  
+                  <extendsection></extendsection>         
+                  <button (click)="changeState('extend', course.$key)" class="btn btn-info">More</button>                                                       
+                  <button (click)="showEdit(course)" class="btn btn-default">Edit</button>         
                   <button (click)="deleteCourse(course.$key)" class="btn btn-warning">Delete</button>                  
                 </td>
               </tr>
@@ -34,6 +33,7 @@
     </div>
   </div>
 </div>
+
 <!-- Table of Courses Ends -->
 
 <!--
