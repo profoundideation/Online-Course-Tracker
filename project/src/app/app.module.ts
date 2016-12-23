@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 // import { ProfileComponent } from './components/profile/profile.component';
 import { AddformComponent } from './components/addform/addform.component';
 import { EditformComponent } from './components/editform/editform.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ExtendsectionComponent } from './components/extendsection/extendsection.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -23,7 +25,9 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     AddformComponent,
-    EditformComponent
+    EditformComponent,
+    NavbarComponent,
+    ExtendsectionComponent
     // HeaderComponent, 
     // HomeComponent, 
     // FooterComponent, 
