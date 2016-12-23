@@ -26,7 +26,9 @@ export const firebaseConfig = {
     AddformComponent,
     EditformComponent,
     NavbarComponent
+    // HeaderComponent, 
     // HomeComponent, 
+    // FooterComponent, 
     // ProfileComponent 
   ],
   imports: [
