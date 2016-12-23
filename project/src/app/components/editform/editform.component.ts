@@ -9,14 +9,14 @@ import { Status } from '../../Status';
 @Component({    
   selector: 'editform',
   templateUrl: 'editform.component.html',  
-  styleUrls:  [ 'editform.component.css' ],
+  styleUrls: [ 'editform.component.css' ],
   providers: [ FirebaseService ]
 })     
 
 export class EditformComponent implements OnInit {
-  courses:Course[];
-  categories:Category[];
-  statuses:Status[];
+  courses: Course[];
+  categories: Category[];
+  statuses: Status[];
   appState: string;
   activeKey: string;
   activeSchool: string;
@@ -74,11 +74,7 @@ export class EditformComponent implements OnInit {
          status: this.activeStatus      
        }
        
-       this._firebaseService.updateCourse(this.activeKey, updCourse);
-       
+       this._firebaseService.updateCourse(this.activeKey, updCourse);       
        this.changeState('default');
-     }
-
-
-      
+     }      
 }

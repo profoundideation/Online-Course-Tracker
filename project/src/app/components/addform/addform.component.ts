@@ -9,7 +9,7 @@ import { Status } from '../../Status';
 @Component({    
   selector: 'addform',
   templateUrl: 'addform.component.html',  
-  styleUrls:  [ 'addform.component.css' ],
+  styleUrls: [ 'addform.component.css' ],
   providers: [ FirebaseService ]
 })     
 
@@ -62,7 +62,7 @@ export class AddformComponent implements OnInit {
            url: string,
            category: string,
            status: string) {
-             var created_at = new Date().toString();
+             let created_at = new Date().toString();
      
              var newCourse = {
                school: school,
@@ -75,8 +75,7 @@ export class AddformComponent implements OnInit {
      
              console.log(newCourse);      
              this._firebaseService.addCourse(newCourse);      
-     
-             // this.changeState('default');        
+                  
              this.changeState('default');
           }              
 }
