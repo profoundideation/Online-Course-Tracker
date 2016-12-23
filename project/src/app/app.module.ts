@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { AddformComponent } from './components/addform/addform.component';
 import { EditformComponent } from './components/editform/editform.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { ExtendsectionComponent } from './components/extendsection/extendsection.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -25,7 +26,8 @@ export const firebaseConfig = {
     AppComponent,
     AddformComponent,
     EditformComponent,
-    NavbarComponent
+    NavbarComponent,
+    ExtendsectionComponent
     // HeaderComponent, 
     // HomeComponent, 
     // FooterComponent, 
