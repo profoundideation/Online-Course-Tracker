@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 import { AppComponent } from '../../app.component';
 
@@ -14,6 +14,8 @@ import { Status } from '../../Status';
 })     
 
 export class EditformComponent implements OnInit {
+  @Input() course: string;
+
   courses: Course[];
   categories: Category[];
   statuses: Status[];
@@ -47,16 +49,16 @@ export class EditformComponent implements OnInit {
           });
       }
       
-      changeState(state, key:any = null){
+     changeState(state, key:any = null){
         console.log('Changing state to: '+state);
         if(key){
           console.log('Changing key to: '+key);
           this.activeKey = key;
         }
         this.appState = state;
-      }
+     }
 
-      showEdit(course) {
+     showEdit(course) {
        this.changeState('edit', course.$key);
        this.activeSchool = course.school,
        this.activeName = course.name;
