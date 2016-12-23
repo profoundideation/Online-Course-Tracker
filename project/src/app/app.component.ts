@@ -72,30 +72,6 @@ export class AppComponent implements OnInit {
     }
     this.appState = state;
   }
-
-  addCourse(
-       school: string,
-       name: string,
-       url: string,
-       category: string,
-       status: string) {
-         var created_at = new Date().toString();
- 
-         var newCourse = {
-           school: school,
-           name: name,
-           url: url,
-           category: category,
-           status: status,
-           created_at: created_at
-         }
- 
-         console.log(newCourse);      
-         this._firebaseService.addCourse(newCourse);      
- 
-         // this.changeState('default');        
-         this.changeState('default');
-     }
  
      showEdit(course) {
        this.changeState('edit', course.$key);

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { FirebaseService } from '../../services/firebase.service';
 import { AppComponent } from '../../app.component';
 
@@ -41,12 +40,40 @@ export class AddformComponent implements OnInit {
         this.categories = categories;
       });
 
-    this._firebaseService.getStatuses()
-      .subscribe(statuses => {
-        //console.log(categories);
-        this.statuses = statuses;
-      });
-  }
+export class AddformComponent  implements OnInit {
+
+  courses:Course[];
+  categories:Category[];
+  statuses:Status[];
+  appState: string;
+  activeKey: string;
+  activeSchool: string;
+  activeName: string;
+  activeUrl: string;
+  activeCategory: string;
+  activeStatus: string;
+
+    constructor(private _firebaseService: FirebaseService) {} 
+    
+      ngOnInit() {
+        this._firebaseService.getCourses()
+          .subscribe(courses => {        
+            this.courses = courses;
+          });
+    
+        this._firebaseService.getCategories()
+          .subscribe(categories => {
+            //console.log(categories);
+            this.categories = categories;
+          });
+    
+    
+        this._firebaseService.getStatuses()
+          .subscribe(statuses => {
+            //console.log(categories);
+            this.statuses = statuses;
+          });
+      }
       
       changeState(state, key:any = null){
         console.log('Changing state to: '+state);
@@ -79,6 +106,5 @@ export class AddformComponent implements OnInit {
      
              // this.changeState('default');        
              this.changeState('default');
-         }
-    
+          }    
 }
