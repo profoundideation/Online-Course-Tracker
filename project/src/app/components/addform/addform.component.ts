@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 import { AppComponent } from '../../app.component';
@@ -10,22 +11,20 @@ import { Status } from '../../Status';
 // import { GithubService } from './services/github.service';
 
 
-@Component({  
-  selector: 'addform',
-  templateUrl: 'addform.component.html',  
-  styleUrls:  ['addform.component.css']
-})
+import { Course } from '../../Course';
+import { Category } from '../../Category';
+import { Status } from '../../Status';
 
-/*
-@Component({  
-  moduleId: module.id,
+// import { GithubService } from './services/github.service';
+
+@Component({    
   selector: 'addform',
   templateUrl: 'addform.component.html',  
   styleUrls:  ['addform.component.css'],
   // directives:[ReviewComponent],
-  providers: [FirebaseService, GithubService, HTTP_PROVIDERS]
+  providers: [FirebaseService, /* GithubService, HTTP_PROVIDERS */]
 })
-*/
+
 
 export class AddformComponent  implements OnInit {
 
@@ -93,4 +92,7 @@ export class AddformComponent  implements OnInit {
          // this.changeState('default');        
          this.changeState('default');
      }
+
+export class AddformComponent {
+  constructor(private _firebaseService: FirebaseService) {} 
 }
