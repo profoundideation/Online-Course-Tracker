@@ -31,24 +31,6 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<!-- ADD COURSES Button START -->
-<div class="well">
-  <div class="row">
-    <div class="col-md-6">
-      <button (click)="changeState('add')" class="btn btn-info">Add Course(s)</button>
-    </div>
-    <div class="col-md-6">
-      <label for="FilterCategory"> Filter Category
-          <select (change)="filterCategory(filteredCategory.value)" #filteredCategory>
-              <option value="All">All</option>
-              <option *ngFor="let category of categories" value="{{category.name}}">{{ category.name }}</option>
-          </select>
-      </label>
-    </div>
-  </div>
-</div>
-<!-- ADD COURSES Button START -->
-
 <addform></addform>
 
 <!-- EDIT FORM START -->

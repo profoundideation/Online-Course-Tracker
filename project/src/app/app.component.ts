@@ -64,7 +64,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  changeState(state, key:any = null){
+  changeState(state, key:any = null) {
     console.log('Changing state to: '+state);
     if(key){
       console.log('Changing key to: '+key);
