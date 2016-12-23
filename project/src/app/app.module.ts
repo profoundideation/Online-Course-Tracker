@@ -4,10 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AngularFireModule } from 'angularfire2';
 
-import { routing, appRoutingProviders } from './app.routing';
+// import { routing, appRoutingProviders } from './app.routing';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { ProfileComponent } from './components/profile/profile.component';
+// import { HomeComponent } from './components/home/home.component';
+// import { ProfileComponent } from './components/profile/profile.component';
 import { AddformComponent } from './components/addform/addform.component';
 
 
@@ -23,17 +23,17 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     AddformComponent,
-    HomeComponent, 
-    ProfileComponent 
+    // HomeComponent, 
+    // ProfileComponent 
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing, 
+    // routing, 
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [ appRoutingProviders ],
+  // providers: [ appRoutingProviders ],
   bootstrap: [ AppComponent ]
 })
 
