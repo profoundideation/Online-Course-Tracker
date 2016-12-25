@@ -1,8 +1,8 @@
 import { Component, OnInit, Inject, forwardRef, Input } from '@angular/core';
 import { FirebaseService } from './services/firebase.service';
 import { Auth } from './services/auth.service';
-// import { HTTP_PROVIDERS } from '@angular/http';
 import 'rxjs/add/operator/map';
+// import { HTTP_PROVIDERS } from '@angular/http';
 
 import { Course } from './Course';
 import { Category } from './Category';
@@ -18,8 +18,7 @@ import { AddformComponent } from './components/addform/addform.component';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  // declarations: [ EditformComponent ],  
-  /* declarations: [ ], */ /* ReviewComponent,  ExtendsectionComponent */
+  // declarations: [ EditformComponent, ReviewComponent,  ExtendsectionComponent ],  
   providers: [ FirebaseService, /* GithubService, HTTP_PROVIDERS */]
 })
 

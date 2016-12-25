@@ -11,6 +11,6 @@ export const options = {
         placeholder: "Enter your GitHub Handle"
       }],
       languageDictionary: {        
-        title: "Welcome!"
+        title: "Online Course Tracker"
       }  
 }
