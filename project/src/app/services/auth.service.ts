@@ -6,26 +6,21 @@ declare var Auth0Lock: any;
 
 @Injectable() 
 export class Auth {
-    lock = new Auth0Lock('4XFEYeZgRXhrvplAPCjI3d1yVvQ7M7pl', 'profound.auth0.com', options);
+    lock = new Auth0Lock('4XFEYeZgRXhrvplAPCjI3d1yVvQ7M7pl', 'profound.auth0.com', {});
 
     constructor() {
-        // Add callback for lock `authenticated` event
         this.lock.on("authenticated", (authResult:any) => {
             this.lock.getProfile(authResult.idToken, function(error:any, profile:any) {
                 if (error) {
                     throw new Error(error);
-                }
-            
-                // set Profile
-                localStorage.setItem('profile', JSON.stringify(profile));
-                // set Token
+                }                
+                localStorage.setItem('profile', JSON.stringify(profile));                
                 localStorage.setItem('id_token', authResult.idToken);
             })
         });
     }
 
-    public login() {
-        // Call the show method to display the widget.
+    public login() {        
         this.lock.show();
     }
 
@@ -33,10 +28,8 @@ export class Auth {
         return tokenNotExpired();
     }
 
-    public logout() {
-    // Remove token from localStorage
+    public logout() {    
     localStorage.removeItem('id_token');
     localStorage.removeItem('profile');
-    }
-      
+    }      
 }
