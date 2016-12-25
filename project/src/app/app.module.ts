@@ -13,7 +13,6 @@ import { AddformComponent } from './components/addform/addform.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 // import { ExtendsectionComponent } from './components/extendsection/extendsection.component';
 
-// Must export the config
 export const firebaseConfig = {
   apiKey: "AIzaSyBx1urE0x8JTap584DbpElS_TtZ_ok2RYk",
   authDomain: "onlinecourses-d3ce0.firebaseapp.com",
@@ -26,19 +25,19 @@ export const firebaseConfig = {
     AppComponent,
     AddformComponent,
     NavbarComponent
-    // HeaderComponent, 
-    // HomeComponent, 
-    // FooterComponent, 
-    // ProfileComponent 
+    HeaderComponent, 
+    HomeComponent, 
+    ProfileComponent, 
+    FooterComponent     
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    // routing, 
+    routing, 
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  // providers: [ appRoutingProviders ],
+  providers: [ appRoutingProviders ],
   bootstrap: [ AppComponent ]
 })
 
