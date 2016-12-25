@@ -6,12 +6,11 @@ import { AngularFireModule } from 'angularfire2';
 
 import { routing, appRoutingProviders } from './app.routing';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AddformComponent } from './components/addform/addform.component';
-
 // import { EditformComponent } from './components/editform/editform.component';
 // import { ExtendsectionComponent } from './components/extendsection/extendsection.component';
 import { FooterComponent } from './components/footer/footer.component';

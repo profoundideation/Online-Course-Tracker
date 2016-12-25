@@ -6,7 +6,7 @@ declare var Auth0Lock: any;
 
 @Injectable() 
 export class Auth {
-    lock = new Auth0Lock('Q7b12iGVRvTEfmtMRpLkJQFYlPIvp27i', 'profound.auth0.com', options);
+    lock = new Auth0Lock('4XFEYeZgRXhrvplAPCjI3d1yVvQ7M7pl', 'profound.auth0.com', options);
 
     constructor() {
         // Add callback for lock `authenticated` event
