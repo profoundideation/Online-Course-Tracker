@@ -16,7 +16,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Blog</a></li>
-        <li><a href="#" *ngIf="!auth.authenticated()">Log In</a>      
+        <li><a href="#" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</a>      
         <li><a href="./profile" routerLink="/profile" *ngIf="auth.authenticated()">Profile</a>   
         <li><a href="#" (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</a>
         <li><a href="#">Support</a></li>
