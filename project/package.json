@@ -51,5 +51,15 @@
     "typescript": "~2.0.3",
     "webdriver-manager": "10.2.5"
   },
-  "repository": {}
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/profoundideation/Online-Course-Tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/profoundideation/Online-Course-Tracker/issues"
+  },
+  "engines": {
+    "node": ">= 4.2.1",
+    "npm": ">= 3"
+  }
 }
