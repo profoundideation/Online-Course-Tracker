@@ -1,0 +1,13 @@
+<h3>User Profile</h3>
+<h5 *ngIf="auth.authenticated()">Welcome {{ profile.nickname }}, You are logged in</h5>
+<div class="row">
+    <div class="col-md-2">
+        <img class="thumbnail" style="width:100%" src="{{ profile.picture }}" />
+    </div>
+    <div class="col-md-10">    
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Email: </strong> {{ profile.name }}</li>
+            <li class="list-group-item"><strong>Last Seen: </strong> {{ profile.updated_at }}</li>
+        </ul>
+    </div>
+</div>

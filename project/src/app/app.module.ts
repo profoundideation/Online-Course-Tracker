@@ -1,12 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AngularFireModule } from 'angularfire2';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AngularFireModule } from 'angularfire2';
 
+import { AUTH_PROVIDERS } from 'angular2-jwt';
+import { routing, appRoutingProviders } from './app.routing';
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { AddformComponent } from './components/addform/addform.component';
+// import { EditformComponent } from './components/editform/editform.component';
+// import { ExtendsectionComponent } from './components/extendsection/extendsection.component';
 
-// Must export the config
+import { Auth } from './services/auth.service';
+import { AuthGuard } from './auth.guard';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyBx1urE0x8JTap584DbpElS_TtZ_ok2RYk",
   authDomain: "onlinecourses-d3ce0.firebaseapp.com",
@@ -16,15 +28,23 @@ export const firebaseConfig = {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddformComponent,
+    NavbarComponent,
+    HeaderComponent, 
+    HomeComponent, 
+    ProfileComponent, 
+    FooterComponent     
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    routing, 
     AngularFireModule.initializeApp(firebaseConfig)
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ appRoutingProviders, AUTH_PROVIDERS, Auth, AuthGuard ],
+  bootstrap: [ AppComponent ]
 })
+
 export class AppModule { }

@@ -1,10 +1,10 @@
-import { BusinesscontactsPage } from './app.po';
+import { OnlineCoursesPage } from './app.po';
 
-describe('businesscontacts App', function() {
-  let page: BusinesscontactsPage;
+describe('online-course-tracker App', function() {
+  let page: OnlineCoursesPage;
 
   beforeEach(() => {
-    page = new BusinesscontactsPage();
+    page = new OnlineCoursesPage();
   });
 
   it('should display message saying app works', () => {

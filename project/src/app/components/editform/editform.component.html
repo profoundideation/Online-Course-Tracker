@@ -1,0 +1,52 @@
+
+
+<!-- EDIT FORM START -->
+<div *ngIf="appState == 'edit'" class="row">  
+  <div class="col-md-10 col-md-offset-1">
+    <p>
+      <button (click)="changeState('default')" class="btn btn-warning" style="float:right;"> X </button>
+    </p>
+    <h3>Edit Course(s)</h3>
+      <form (submit)="updateCourse()">
+        <div class="form-group">
+          <label>School: </label>
+            <input class="form-control" type="text" [(ngModel)]="activeSchool" name="activeSchool" placeholder="Course Name" #school>
+        </div>
+        <div class="form-group">
+          <label> Course: </label>
+            <input class="form-control" type="text" [(ngModel)]="activeName" name="activeName" placeholder="Course Name" #name>
+        </div>
+        <div class="form-group">
+          <label>Category: </label>
+          <select [(ngModel)]="activeCategory" name="activeCategory" class="form-control" #category>
+            <option value="0">Select</option>
+            <option *ngFor="let category of categories" value="{{ category.name }}">{{ category.name }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>URL: </label>
+            <input class="form-control" type="text" [(ngModel)]="activeUrl" name="activeUrl" placeholder="Course URL" #url>          
+        </div>
+        <div class="form-group">
+          <label>Description: </label>
+            <textarea class="form-control" #description></textarea>          
+        </div>        
+        <div class="form-group">
+          <label>Course Status</label>
+          <select [(ngModel)]="activeStatus" name="activeStatus" class="form-control" #status>
+            <option value="0">Select</option>
+            <option *ngFor="let status of statuses" value="{{ status.name }}">{{ status.name }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Comments</label>
+          <textarea class="form-control" #notes></textarea>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-danger" value="Submit">
+          <button (click)="changeState('default')" class="btn btn-warning">Cancel</button>
+        </div>
+      </form>
+  </div>
+</div>
+<!-- EDIT FORM ENDS -->

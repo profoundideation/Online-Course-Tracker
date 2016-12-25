@@ -1,0 +1,53 @@
+
+
+<!-- EXTEND SECTION Starts -->
+<div *ngIf="appState == 'extend'" class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <p>
+        <button (click)="changeState('default')" class="btn btn-warning" style="float:right; margin-bottom: 10px;"> X </button>
+      </p>
+    </div>
+  </div>
+  <div *ngFor="let course of courses">
+    <div *ngIf="course.$key == activeKey">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{ course.name }}</h3>
+            </div>
+            <div class="panel-body">
+              <p>Platform: {{ course.school }}</p>
+              <p>Category: {{ course.category }}</p>              
+              <p>Status: {{ course.status }}</p>
+                <div class="progress">
+                  <div *ngIf="course.status == 'Not started'" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">0%</div>                  
+                  <div *ngIf="course.status == '0%-25%'" class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">25%</div>  
+                  <div *ngIf="course.status == '25%-50%'" class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50%</div> 
+                  <div *ngIf="course.status == '50%-75%'" class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">75%</div>
+                  <div *ngIf="course.status == '75%-99%'" class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%;">99%</div> 
+                  <div *ngIf="course.status == 'Finished'" class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>                  
+                </div>                    
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h4 class="panel-title">Course Info.</h4>
+            </div>
+            <div class="panel-body">
+              <ul>
+                <li><p>Description: <!-- {{ course.description }} --></p></li>
+                <li>Reviews</li>
+                <li>Share: ...</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- EXTEND SECTION ENDS -->

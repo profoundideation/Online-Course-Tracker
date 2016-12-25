@@ -1,0 +1,71 @@
+<!-- ADD COURSES Button START -->
+<div class="well">
+  <div class="row">
+    <div class="col-md-6">
+      <button (click)="changeState('add')" class="btn btn-info">Add Course(s)</button>
+    </div>
+    <div class="col-md-6">
+      <label for="FilterCategory"> Filter Category
+          <select (change)="filterCategory(filteredCategory.value)" #filteredCategory>
+              <option value="All">All</option>
+              <option *ngFor="let category of categories" value="{{category.name}}">{{ category.name }}</option>
+          </select>
+      </label>
+    </div>
+  </div>
+</div>
+<!-- ADD COURSES Button START -->
+
+<div *ngIf="appState == 'add'" class="row">  
+    <div class="col-md-10 col-md-offset-1 jumbotron">
+      <p>
+        <button (click)="changeState('default')" class="btn btn-warning" style="float:right;"> X </button>
+      </p>
+      <h3>Add a Course</h3>
+        <form (submit)="addCourse(
+                  school.value,
+                  name.value,
+                  url.value,
+                  category.value,
+                  status.value, 
+                  description.value,
+                  notes.value)">  
+          <div class="form-group">
+            <label for="CourseName">Course Name</label>
+              <input class="form-control" type="text" id="CourseName" placeholder="Course Name" #name>
+          </div>          
+          <div class="form-group">
+            <label for="SchoolName">School Name</label>
+              <input class="form-control" type="text" id="SchoolName" placeholder="School Name" #school>
+          </div>          
+          <div class="form-group">
+            <label for="CourseStatus">Course Status</label>
+              <select #status>
+                <option value="0">Select</option>
+                <option *ngFor="let status of statuses" value="{{ status.name }}">{{ status.name }}</option>
+              </select>                
+          </div>
+          <div class="form-group">
+            <label for="CourseCategory">Category</label>
+                <select #category class="form-control">
+                  <option value="0">Select</option>
+                  <option *ngFor="let category of categories" value="{{ category.name }}">{{ category.name }}</option>
+                </select>                
+          </div>          
+          <div class="form-group">
+            <label for="CourseURL">URL</label>
+                <input type="text" class="form-control" id="CourseURL" placeholder="Course URL" #url>                 
+          </div>          
+          <div class="form-group">
+              <label for="CourseDescription">Description</label>
+                  <textarea class="form-control" id="CourseDescription" placeholder="Add a brief Description" #description></textarea>            
+          </div>
+          <div class="form-group">
+              <label for="CourseNotes">Comments / Notes</label>
+                  <textarea class="form-control" id="CourseNotes" placeholder="Add Comments / Notes Here." #notes></textarea>            
+          </div>          
+          <button type="submit" class="btn btn-danger">Submit</button>
+          <button (click)="changeState('default')" class="btn btn-warning">Cancel</button>    
+        </form>
+    </div>
+</div>
