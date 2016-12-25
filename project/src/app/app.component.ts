@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, forwardRef, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from './services/firebase.service';
 import { Auth } from './services/auth.service';
 import 'rxjs/add/operator/map';

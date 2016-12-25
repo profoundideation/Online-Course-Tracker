@@ -1,0 +1,5 @@
+<h3>Welcome Home</h3>
+<h5 *ngIf="auth.authenticated()">You are logged in</h5>
+<h5 *ngIf="!auth.authenticated()">You are not logged in, please click on the login link above to log in.</h5>
+
+<courses></courses>

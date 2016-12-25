@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
+import { CoursesComponent } from './components/courses/courses.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AddformComponent } from './components/addform/addform.component';
 // import { EditformComponent } from './components/editform/editform.component';
@@ -33,6 +34,7 @@ export const firebaseConfig = {
     NavbarComponent,
     HeaderComponent, 
     HomeComponent, 
+    CoursesComponent,
     ProfileComponent, 
     FooterComponent     
   ],
