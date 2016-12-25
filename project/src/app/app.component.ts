@@ -37,7 +37,6 @@ export class AppComponent implements OnInit {
 
   constructor(private _firebaseService: FirebaseService, private auth: Auth) {
   }
-  
 
   ngOnInit() {
     this._firebaseService.getCourses()
