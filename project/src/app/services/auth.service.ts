@@ -31,6 +31,5 @@ export class Auth {
     public logout() {    
     localStorage.removeItem('id_token');
     localStorage.removeItem('profile');
-    }
-      
+    }      
 }

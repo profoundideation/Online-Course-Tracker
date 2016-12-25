@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject, forwardRef, Input } from '@angular/core';
 import { FirebaseService } from './services/firebase.service';
+import { Auth } from './services/auth.service';
 // import { HTTP_PROVIDERS } from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -34,8 +35,9 @@ export class AppComponent implements OnInit {
   activeCategory: string;
   activeStatus: string;
 
-  constructor(private _firebaseService: FirebaseService) {
+  constructor(private _firebaseService: FirebaseService, private auth: Auth) {
   }
+  
 
   ngOnInit() {
     this._firebaseService.getCourses()
@@ -78,7 +80,6 @@ export class AppComponent implements OnInit {
     this.appState = state;
   } 
      
-
       showEdit(course) {
        this.changeState('edit', course.$key);
        this.activeSchool = course.school,
@@ -100,7 +101,6 @@ export class AppComponent implements OnInit {
        this._firebaseService.updateCourse(this.activeKey, updCourse);       
        this.changeState('default');
      }      
-
 
      deleteCourse(key) {
        this._firebaseService.deleteCourse(key);       

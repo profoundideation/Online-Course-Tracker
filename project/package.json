@@ -27,9 +27,9 @@
     "firebase": "^3.6.4",
     "rxjs": "5.0.1",
     "ts-helpers": "^1.1.1",
-    "tslint": "*",
+    "tslint": "^3.0.0",
     "uuid": "^3.0.1",
-    "zone.js": "^0.7.2"
+    "zone.js": "^0.7.4"
   },
   "devDependencies": {
     "@angular/compiler-cli": "2.2.3",
