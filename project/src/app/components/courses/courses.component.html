@@ -1,0 +1,149 @@
+<addform></addform>
+<router-outlet></router-outlet>
+
+<!-- EDIT FORM START -->
+<div *ngIf="appState == 'edit'" class="row">  
+  <div class="col-md-10 col-md-offset-1">
+    <p>
+      <button (click)="changeState('default')" class="btn btn-warning" style="float:right;"> X </button>
+    </p>
+    <h3>Edit Course(s)</h3>
+      <form (submit)="updateCourse()">
+        <div class="form-group">
+          <label>School: </label>
+            <input class="form-control" type="text" [(ngModel)]="activeSchool" name="activeSchool" placeholder="Course Name" #school>
+        </div>
+        <div class="form-group">
+          <label> Course: </label>
+            <input class="form-control" type="text" [(ngModel)]="activeName" name="activeName" placeholder="Course Name" #name>
+        </div>
+        <div class="form-group">
+          <label>Category: </label>
+          <select [(ngModel)]="activeCategory" name="activeCategory" class="form-control" #category>
+            <option value="0">Select</option>
+            <option *ngFor="let category of categories" value="{{ category.name }}">{{ category.name }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>URL: </label>
+            <input class="form-control" type="text" [(ngModel)]="activeUrl" name="activeUrl" placeholder="Course URL" #url>          
+        </div>
+        <div class="form-group">
+          <label>Description: </label>
+            <textarea class="form-control" #description></textarea>          
+        </div>        
+        <div class="form-group">
+          <label>Course Status</label>
+          <select [(ngModel)]="activeStatus" name="activeStatus" class="form-control" #status>
+            <option value="0">Select</option>
+            <option *ngFor="let status of statuses" value="{{ status.name }}">{{ status.name }}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Comments</label>
+          <textarea class="form-control" #notes></textarea>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-danger" value="Submit">
+          <button (click)="changeState('default')" class="btn btn-warning">Cancel</button>
+        </div>
+      </form>
+  </div>
+</div>
+<!-- EDIT FORM ENDS -->
+
+<!-- EXTEND SECTION Starts -->
+<div *ngIf="appState == 'extend'" class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <p>
+        <button (click)="changeState('default')" class="btn btn-warning" style="float:right; margin-bottom: 10px;"> X </button>
+      </p>
+    </div>
+  </div>
+  <div *ngFor="let course of courses">
+    <div *ngIf="course.$key == activeKey">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{ course.name }}</h3>
+            </div>
+            <div class="panel-body">
+              <p>Platform: {{ course.school }}</p>
+              <p>Category: {{ course.category }}</p>              
+              <p>Status: {{ course.status }}</p>
+                <div class="progress">
+                  <div *ngIf="course.status == 'Not started'" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">0%</div>                  
+                  <div *ngIf="course.status == '0%-25%'" class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">25%</div>  
+                  <div *ngIf="course.status == '25%-50%'" class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">50%</div> 
+                  <div *ngIf="course.status == '50%-75%'" class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">75%</div>
+                  <div *ngIf="course.status == '75%-99%'" class="progress-bar" role="progressbar" aria-valuenow="99" aria-valuemin="0" aria-valuemax="100" style="width: 99%;">99%</div> 
+                  <div *ngIf="course.status == 'Finished'" class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">100%</div>                  
+                </div>                    
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h4 class="panel-title">Course Info.</h4>
+            </div>
+            <div class="panel-body">
+              <ul>
+                <li><p>Description: <!-- {{ course.description }} --></p></li>
+                <li>Reviews</li>
+                <li>Share: ...</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- EXTEND SECTION ENDS -->
+
+
+<!-- Table of Courses Start -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div *ngIf="courses" class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>School</th>
+                <th>Course Name</th>
+                <th>Category</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let course of courses">
+                <td>{{ course.school }}</td>
+                <td>{{ course.name }}</td>
+                <td>{{ course.category }}</td>
+                <td>       
+                  <button (click)="changeState('extend', course.$key)" class="btn btn-info">More</button>                                                       
+                  <button (click)="showEdit(course)" class="btn btn-default">Edit</button>         
+                  <button (click)="deleteCourse(course.$key)" class="btn btn-warning">Delete</button>                  
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Table of Courses Ends -->
+
+<!--
+  <div class="jumbotron">
+    <h6> Check: </h6>
+    <ul *ngFor="let course of courses">
+      <li>{{ course.name }}</li>
+    </ul>
+  </div>
+-->

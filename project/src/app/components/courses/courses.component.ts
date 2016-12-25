@@ -1,40 +1,35 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseService } from './services/firebase.service';
-import { Auth } from './services/auth.service';
+import { Auth } from '../../services/auth.service';
+import { FirebaseService } from '../../services/firebase.service';
 import 'rxjs/add/operator/map';
-// import { HTTP_PROVIDERS } from '@angular/http';
 
-import { Course } from './Course';
-import { Category } from './Category';
-import { Status } from './Status';
+import { AddformComponent } from '../addform/addform.component';
 
-import { AddformComponent } from './components/addform/addform.component';
-// import { EditformComponent } from './components/editform/editform.component';
-// import { ExtendsectionComponent } from './components/extendsection/extendsection.component';
-// import { ReviewComponent } from './components/review/review.component';
-// import { GithubService } from './services/github.service';
+import { Course } from '../../Course';
+import { Category } from '../../Category';
+import { Status } from '../../Status';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  // declarations: [ EditformComponent, ReviewComponent,  ExtendsectionComponent ],  
-  providers: [ FirebaseService, /* GithubService, HTTP_PROVIDERS */]
+    selector: 'courses',
+    templateUrl: 'courses.component.html',
+    providers: [ FirebaseService ]
 })
 
-export class AppComponent implements OnInit {
-  courses: Course[];
-  categories: Category[];
-  statuses: Status[];
-  appState: string;
-  activeKey: string;
-  activeSchool: string;
-  activeName: string;
-  activeUrl: string;
-  activeCategory: string;
-  activeStatus: string;
+export class CoursesComponent implements OnInit {
+    profile: any;
+    courses: Course[];
+    categories: Category[];
+    statuses: Status[];
+    appState: string;
+    activeKey: string;
+    activeSchool: string;
+    activeName: string;
+    activeUrl: string;
+    activeCategory: string;
+    activeStatus: string;
 
   constructor(private _firebaseService: FirebaseService, private auth: Auth) {
+      this.profile = JSON.parse(localStorage.getItem('profile'));    
   }
 
   ngOnInit() {

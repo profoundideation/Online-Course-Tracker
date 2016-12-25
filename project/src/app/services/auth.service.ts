@@ -5,8 +5,9 @@ import { options } from '../auth.options';
 declare var Auth0Lock: any;
 
 @Injectable() 
+
 export class Auth {
-    lock = new Auth0Lock('4XFEYeZgRXhrvplAPCjI3d1yVvQ7M7pl', 'profound.auth0.com', {});
+    lock = new Auth0Lock('4XFEYeZgRXhrvplAPCjI3d1yVvQ7M7pl', 'profound.auth0.com', options);
 
     constructor() {
         this.lock.on("authenticated", (authResult:any) => {
@@ -29,7 +30,7 @@ export class Auth {
     }
 
     public logout() {    
-    localStorage.removeItem('id_token');
-    localStorage.removeItem('profile');
+        localStorage.removeItem('id_token');
+        localStorage.removeItem('profile');
     }      
 }
