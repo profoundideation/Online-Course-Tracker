@@ -1,8 +1,8 @@
-// import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 
-// @Component({
-//   selector: 'header',
-//   templateUrl: 'header.component.html'
-// })
+@Component({
+  selector: 'header',
+  templateUrl: 'header.component.html'
+})
 
-// export class HeaderComponent { }
+export class HeaderComponent { }
