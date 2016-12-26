@@ -4,16 +4,13 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "start": "http-server dist/",
+    "start": "ng serve",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
-    "e2e": "protractor",
-    "start.prod": "http-server dist/",
-    "build.prod": "ng build --prod",
-    "preinstall": "npm install -g http-server",
-    "postinstall": "ng build --prod"
+    "e2e": "protractor"
   },
+  "private": true,
   "dependencies": {
     "@angular/common": "2.2.3",
     "@angular/compiler": "2.2.3",
@@ -31,8 +28,9 @@
     "rxjs": "5.0.1",
     "ts-helpers": "^1.1.1",    
     "uuid": "^3.0.1",
-    "zone.js": "^0.7.4",
-    "express": "4.13.3",
+    "zone.js": "^0.7.4"
+  },
+  "devDependencies": {
     "@angular/compiler-cli": "2.2.3",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
@@ -50,9 +48,9 @@
     "ts-node": "1.2.1",
     "tslint": "4.1.1",
     "typescript": "2.0.3",
-    "webdriver-manager": "10.2.5"
-  },
-  "devDependencies": {
+    "webdriver-manager": "10.2.5",
+    "rxjs": "5.0.1",
+    "zone.js": "^0.7.4"
   },
   "repository": {
     "type": "git",
@@ -62,7 +60,7 @@
     "url": "https://github.com/profoundideation/Online-Course-Tracker/issues"
   },
   "engines": {
-    "node": "5.1.0",
-    "npm": "3.4.1"
+    "node": ">= 5",
+    "npm": ">= 3"
   }
 }
