@@ -31,6 +31,7 @@
     "ts-helpers": "^1.1.1",    
     "uuid": "^3.0.1",
     "zone.js": "^0.7.4",
+    "express": "4.13.3",
     "@angular/compiler-cli": "2.2.3",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
@@ -60,7 +61,7 @@
     "url": "https://github.com/profoundideation/Online-Course-Tracker/issues"
   },
   "engines": {
-    "node": ">= 4.2.1",
-    "npm": ">= 3"
+    "node": "5.1.0",
+    "npm": "3.4.1"
   }
 }
