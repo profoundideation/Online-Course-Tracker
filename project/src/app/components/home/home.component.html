@@ -1,6 +1,8 @@
-<h3>Welcome Home</h3>
-<h5 *ngIf="auth.authenticated()">You are logged in</h5>
-<h5 *ngIf="!auth.authenticated()">You are not logged in, please click on the login link above to log in.</h5>
-
+<div class="alert alert-warning" role="alert">
+    <h3>Welcome Home</h3>
+    <h5 *ngIf="auth.authenticated()">You are logged in</h5>
+    <h5 *ngIf="!auth.authenticated()">You are not logged in, please click on the login link above to log in.</h5>
+</div>
 <courses *ngIf="auth.authenticated()"></courses>
 <welcome *ngIf="!auth.authenticated()"></welcome>
+<footer></footer>
