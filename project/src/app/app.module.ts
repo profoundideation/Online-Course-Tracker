@@ -21,11 +21,11 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { Auth } from './services/auth.service';
 import { AuthGuard } from './auth.guard';
 
-export const firebaseConfig = {
-  apiKey: "AIzaSyBx1urE0x8JTap584DbpElS_TtZ_ok2RYk",
-  authDomain: "onlinecourses-d3ce0.firebaseapp.com",
-  databaseURL: "https://onlinecourses-d3ce0.firebaseio.com",
-  storageBucket: "onlinecourses-d3ce0.appspot.com"
+export const firebaseConfig = {  
+  apiKey: "AIzaSyBE0_9cQ8vmZkj-ZYS0RYZcDCcif13uzdA",
+  authDomain: "course-tracker-46e40.firebaseapp.com",
+  databaseURL: "https://course-tracker-46e40.firebaseio.com",
+  storageBucket: "course-tracker-46e40.appspot.com",
 };
 
 @NgModule({
