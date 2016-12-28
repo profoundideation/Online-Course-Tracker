@@ -3,6 +3,7 @@ import { Auth } from '../../services/auth.service';
 
 @Component({
   selector: 'navbar',
+  styleUrls: [ 'navbar.component.css' ],
   templateUrl: 'navbar.component.html'
 })
 
