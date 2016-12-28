@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import { Course } from './Course';
 import { Category } from './Category';
 import { Status } from './Status';
+import {UserCourses} from "./UserCourses";
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,8 @@ export class AppComponent implements OnInit {
   courses: Course[];
   categories: Category[];
   statuses: Status[];
+  usercourses: UserCourses[];
+  profile: any;
   appState: string;
   activeKey: string;
   activeSchool: string;
@@ -31,7 +34,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this._firebaseService.getCourses()
-      .subscribe(courses => {        
+      .subscribe(courses => {
         this.courses = courses;
       });
 
@@ -45,6 +48,19 @@ export class AppComponent implements OnInit {
       .subscribe(statuses => {
         //console.log(categories);
         this.statuses = statuses;
+      });
+
+    this._firebaseService.getUserCourses()
+      .subscribe(users => {
+        var list = []
+        this.profile = JSON.parse(localStorage.getItem('profile'));
+        for(var i in users){
+          if(users[i].name == this.profile.given_name){
+            list.push(users[i]["usercourses"]);
+          }
+        }
+        console.log(list);
+        this.usercourses = list;
       });
   }
 }
