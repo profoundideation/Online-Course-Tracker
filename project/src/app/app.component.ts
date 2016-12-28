@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import { Course } from './Course';
 import { Category } from './Category';
 import { Status } from './Status';
+import { User } from './User';
 
 @Component({
   selector: 'app-root',
