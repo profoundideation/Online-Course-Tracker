@@ -19,7 +19,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 // import { ExtendsectionComponent } from './components/extendsection/extendsection.component';
 
 import { Auth } from './services/auth.service';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './auth/auth.guard';
 
 export const firebaseConfig = {  
   apiKey: "AIzaSyBE0_9cQ8vmZkj-ZYS0RYZcDCcif13uzdA",
