@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
-import { options } from '../auth.options';
+import { options } from '../auth/auth.options';
 
 declare var Auth0Lock: any;
 
