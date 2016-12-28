@@ -5,9 +5,9 @@ import 'rxjs/add/operator/map';
 
 import { AddformComponent } from '../addform/addform.component';
 
-import { Course } from '../../Course';
-import { Category } from '../../Category';
-import { Status } from '../../Status';
+import { Course } from '../../firebase/Course';
+import { Category } from '../../firebase/Category';
+import { Status } from '../../firebase/Status';
 
 @Component({
     selector: 'courses',

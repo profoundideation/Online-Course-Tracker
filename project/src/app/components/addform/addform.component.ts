@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 import { AppComponent } from '../../app.component';
 
-import { Course } from '../../Course';
-import { Category } from '../../Category';
-import { Status } from '../../Status';
+import { Course } from '../../firebase/Course';
+import { Category } from '../../firebase/Category';
+import { Status } from '../../firebase/Status';
 
 @Component({    
   selector: 'addform',
