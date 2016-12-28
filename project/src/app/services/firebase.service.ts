@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import 'rxjs/add/operator/map';
 import { Course } from '../Course';
-import { UserCourses } from '../UserCourses';
-import { Category } from '../Category';
-import { Status } from '../Status';
+import { UserCourses } from '../firebase/UserCourses';
+import { Category } from '../firebase/Category';
+import { Status } from '../firebase/Status';
 
 @Injectable()
 export class FirebaseService{
