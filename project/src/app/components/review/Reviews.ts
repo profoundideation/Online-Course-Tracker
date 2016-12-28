@@ -1,4 +1,4 @@
-export class Reviews {
+(function(app) {
     
     var __slice = [].slice;
     
@@ -205,4 +205,4 @@ export class Reviews {
         });
     });
     
-};
+})(app);
