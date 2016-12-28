@@ -9,4 +9,4 @@ import { Auth } from '../../services/auth.service';
 export class NavbarComponent {
   constructor(private auth: Auth) {
   }
- }
+}
