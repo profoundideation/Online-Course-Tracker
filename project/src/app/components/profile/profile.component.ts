@@ -3,6 +3,7 @@ import { Auth } from '../../services/auth.service';
 
 @Component({
   selector: 'profile',
+  styleUrls: [ 'profile.component.css' ],
   templateUrl: 'profile.component.html'
 })
 
