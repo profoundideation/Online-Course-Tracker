@@ -1,16 +1,16 @@
 
-    <div class="bs-example" *ngIf="auth.authenticated()">
+<div class="bs-example" *ngIf="auth.authenticated()">
+    <div class="alert alert-warning">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+            <p>You are logged in</p>
+    </div>
+</div>
+<div class="bs-example" *ngIf="!auth.authenticated()">
         <div class="alert alert-warning">
             <a href="#" class="close" data-dismiss="alert">&times;</a>
-                <p>You are logged in</p>
+            <h5>You are not logged in, please click on the login link above to log in.</h5>
         </div>
-    </div>
-    <div class="bs-example" *ngIf="!auth.authenticated()">
-            <div class="alert alert-warning">
-                <a href="#" class="close" data-dismiss="alert">&times;</a>
-                <h5>You are not logged in, please click on the login link above to log in.</h5>
-            </div>
-    </div>
+</div>
 
 <courses *ngIf="auth.authenticated()"></courses>
 

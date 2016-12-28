@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AngularFireModule } from 'angularfire2';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AUTH_PROVIDERS } from 'angular2-jwt';
+
 import { routing, appRoutingProviders } from './app.routing';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -19,7 +19,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 // import { ExtendsectionComponent } from './components/extendsection/extendsection.component';
 
 import { Auth } from './services/auth.service';
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './auth/auth.guard';
 
 export const firebaseConfig = {  
   apiKey: "AIzaSyBE0_9cQ8vmZkj-ZYS0RYZcDCcif13uzdA",

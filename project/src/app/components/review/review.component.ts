@@ -3,12 +3,11 @@ import 'rxjs/add/operator/map';
 
 @Component({
     selector: 'review',
-    templateUrl: './app/components/review.component.html',
-    styleUrls: ['./app/components/review.component.css']
+    templateUrl: 'review.component.html',
+    styleUrls: ['review.component.css']
 })
 
-export class ReviewComponent {
-  
+export class ReviewComponent {  
     const __slice = [].slice;
     
     (function($, window) {

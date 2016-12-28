@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Auth } from '../../services/auth.service';
 
 @Component({
-  selector: 'all-courses',
-  templateUrl: 'all-courses.component.html'
+  selector: 'slideshow',
+  styleUrls: [ 'slideshow.component.css' ],
+  templateUrl: 'slideshow.component.html'
 })
 
-export class AllCourseComponent {
+export class SlideshowComponent {
   constructor(private auth: Auth) {
   }
 }
