@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import 'rxjs/add/operator/map';
 import { Course } from '../Course';
+import { UserCourses } from '../UserCourses';
 import { Category } from '../Category';
 import { Status } from '../Status';
 
 @Injectable()
 export class FirebaseService{
     courses: FirebaseListObservable<Course[]>;
+    usercourses: FirebaseListObservable<UserCourses[]>;
     categories: FirebaseListObservable<Category[]>;
     statuses: FirebaseListObservable<Status[]>;
 
@@ -15,7 +17,7 @@ export class FirebaseService{
 
 getCourses(category:string = null) {
     if(category != null){
-        this.courses = this._af.database.list('/courses', {
+        this.courses = this._af.database.list('/allcourses', {
                 query: {
                     orderByChild: 'category',
                     equalTo: category
@@ -23,8 +25,8 @@ getCourses(category:string = null) {
             }) as
             FirebaseListObservable<Course[]>
         } else {
-            this.courses = this._af.database.list('/courses') as 
-            FirebaseListObservable<Course[]>
+            this.courses = this._af.database.list('/allcourses') as
+            FirebaseListObservable<Course []>
         }
         return this.courses;
     }
@@ -41,14 +43,20 @@ getCourses(category:string = null) {
         return this.statuses;
     }
 
+  getUserCourses() {
+      this.usercourses = this._af.database.list('/user') as
+      FirebaseListObservable<UserCourses[]>
+      return this.usercourses;
+  }
+
     addCourse(newCourse) {
         return this.courses.push(newCourse);
     }
-        
+
     updateCourse(key, updCourse){
         return this.courses.update(key, updCourse);
     }
-    
+
     deleteCourse(key){
         return this.courses.remove(key);
     }
