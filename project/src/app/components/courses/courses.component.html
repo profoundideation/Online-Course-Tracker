@@ -124,14 +124,14 @@
                               </tr>
                          </thead>
                          <tbody>
-                              <tr *ngFor="let usercourse of usercourses">
+                              <tr *ngFor="let usercourse of usercourses"></tr>
                                    <td>{{ usercourse.school }}</td>
                                    <td>{{ usercourse.name }}</td>
                                    <td>{{ usercourse.category }}</td>
                                    <td>
                                         <button (click)="changeState('extend', usercourse.$key)" class="btn btn-info">More</button>
-                                        <button (click)="showEdit(usercourse)" class="btn btn-default">Edit</button>
-                                        <button (click)="deleteUserCourse(usercourse.$key)" class="btn btn-warning">Delete</button>
+                                        <button (click)="showEdit(usercourse)" class="btn btn-warning">Edit</button>
+                                        <button (click)="deleteUserCourse(usercourse.$key)" class="btn btn-danger">Delete</button>
                                    </td>
                               </tr>
                          </tbody>
@@ -140,14 +140,3 @@
           </div>
      </div>
 </div>
-
-<!-- Table of Courses Ends -->
-
-<!--
-  <div class="jumbotron">
-    <h6> Check: </h6>
-    <ul *ngFor="let course of courses">
-      <li>{{ course.name }}</li>
-    </ul>
-  </div>
--->
