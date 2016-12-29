@@ -1,24 +1,13 @@
-<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 import { Auth } from '../../services/auth.service';
 import { FirebaseService } from '../../services/firebase.service';
 import 'rxjs/add/operator/map';
 
 import { AddformComponent } from '../addform/addform.component';
-
 import { UserCourse } from '../../firebase/UserCourse';
 import { Category } from '../../firebase/Category';
 import { Status } from '../../firebase/Status';
-=======
-import {Component, OnInit} from "@angular/core";
-import {Auth} from "../../services/auth.service";
-import {FirebaseService} from "../../services/firebase.service";
-import "rxjs/add/operator/map";
-import {UserCourse} from "../../firebase/UserCourse";
-import {AllCourses} from "../../firebase/AllCourses";
-import {Category} from "../../firebase/Category";
-import {Status} from "../../firebase/Status";
->>>>>>> dev
+import {AllCourses} from '../../firebase/AllCourses';
 
 @Component({
     selector: 'courses',

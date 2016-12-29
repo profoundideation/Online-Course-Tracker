@@ -4,17 +4,14 @@ import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AuthGuard } from './auth/auth.guard';
 
-const appRoutes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent,    
-    canActivate: [ AuthGuard ]
-  }
-];
+const appRoutes: Routes = [{
+     path: '',
+     component: HomeComponent
+}, {
+     path: 'profile',
+     component: ProfileComponent,
+     canActivate: [AuthGuard]
+}];
 
 export const appRoutingProviders: any[] = [];
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
