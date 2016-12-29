@@ -1,4 +1,4 @@
-export interface Course {
+export interface UserCourse {
     $key?: string;
     school?: string;
     name: string;
