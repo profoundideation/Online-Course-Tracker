@@ -1,4 +1,4 @@
-export interface Category {
+export interface User {
     $key?: string;
     name?: string;
 }

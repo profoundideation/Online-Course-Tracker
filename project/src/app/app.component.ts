@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 import { Course } from './firebase/Course';
 import { Category } from './firebase/Category';
 import { Status } from './firebase/Status';
-import {UserCourses} from "./firebase/UserCourses";
+import { User } from "./firebase/User";
 
 @Component({
   selector: 'app-root',
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   courses: Course[];
   categories: Category[];
   statuses: Status[];
-  usercourses: UserCourses[];
+  usercourses: User[];
   profile: any;
   appState: string;
   activeKey: string;
