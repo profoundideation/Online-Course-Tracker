@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 import { AppComponent } from '../../app.component';
 
-import { Course } from '../../firebase/Course';
+import { Course } from '../../firebase/UserCourse';
 import { Category } from '../../firebase/Category';
 import { Status } from '../../firebase/Status';
 
@@ -15,8 +15,8 @@ import { Status } from '../../firebase/Status';
 
 export class EditformComponent implements OnInit {
   @Input() course: string;
-
-  courses: Course[];
+  usercourses: UserCourse[];
+  allcourses: AllCourse[];
   categories: Category[];
   statuses: Status[];
   appState: string;
