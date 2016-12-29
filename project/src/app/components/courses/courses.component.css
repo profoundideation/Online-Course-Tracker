@@ -1,3 +1,12 @@
 .table-sortable tbody tr {
     cursor: move;
 }
+.courses-table-bg { /* Main Table */ 
+    background: rgba(76, 175, 80, 0.3)
+}
+.courses-table-bg2 { /* EXTEND SECTION */
+    background: rgba(165, 18, 10, 0.2)
+}
+.courses-table-bg3 { /* EDIT FORM */
+    background: rgba(108, 100, 20, 0.1) 
+}
