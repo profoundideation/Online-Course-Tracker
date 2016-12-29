@@ -1,16 +1,15 @@
-import { Injectable } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
-import 'rxjs/add/operator/map';
-
-import { Course } from '../firebase/Course';
-import { UserCourses } from '../firebase/UserCourses';
-import { Category } from '../firebase/Category';
-import { Status } from '../firebase/Status';
+import {Injectable} from "@angular/core";
+import {AngularFire, FirebaseListObservable} from "angularfire2";
+import "rxjs/add/operator/map";
+import {AllCourses} from "../firebase/AllCourses";
+import {UserCourse} from "../firebase/UserCourse";
+import {Category} from "../firebase/Category";
+import {Status} from "../firebase/Status";
 
 @Injectable()
 export class FirebaseService{
-    courses: FirebaseListObservable<Course[]>;
-    usercourses: FirebaseListObservable<UserCourses[]>;
+    allcourses: FirebaseListObservable<AllCourses[]>;
+    usercourses: FirebaseListObservable<UserCourse[]>;
     categories: FirebaseListObservable<Category[]>;
     statuses: FirebaseListObservable<Status[]>;
 
@@ -18,18 +17,27 @@ export class FirebaseService{
 
 getCourses(category:string = null) {
     if(category != null){
+<<<<<<< HEAD
         this.courses = this._af.database.list('/usercourses', {
+=======
+        this.allcourses = this._af.database.list('/allcourses', {
+>>>>>>> dev
                 query: {
                     orderByChild: 'category',
                     equalTo: category
                 }
             }) as
-            FirebaseListObservable<Course[]>
+            FirebaseListObservable<AllCourses[]>
         } else {
+<<<<<<< HEAD
             this.courses = this._af.database.list('/usercourses') as
             FirebaseListObservable<Course []>
+=======
+            this.allcourses = this._af.database.list('/allcourses') as
+            FirebaseListObservable<AllCourses []>
+>>>>>>> dev
         }
-        return this.courses;
+        return this.allcourses;
     }
 
     getCategories() {
@@ -44,21 +52,31 @@ getCourses(category:string = null) {
         return this.statuses;
     }
 
-  getUserCourses() {
-      this.usercourses = this._af.database.list('/user') as
-      FirebaseListObservable<UserCourses[]>
+  getUserCourses(category:string = null) {
+      if(category != null){
+          this.usercourses = this._af.database.list('/users', {
+              query: {
+                  orderByChild: 'category',
+                  equalTo: category
+              }
+          }) as
+          FirebaseListObservable<UserCourse[]>
+      } else {
+          this.usercourses = this._af.database.list('/users') as
+          FirebaseListObservable<UserCourse[]>
+      }
       return this.usercourses;
   }
 
-    addCourse(newCourse) {
-        return this.courses.push(newCourse);
+    addCourse(newCourse){
+        return this.allcourses.push(newCourse);
     }
 
     updateCourse(key, updCourse){
-        return this.courses.update(key, updCourse);
+        return this.allcourses.update(key, updCourse);
     }
 
     deleteCourse(key){
-        return this.courses.remove(key);
+        return this.allcourses.remove(key);
     }
 }

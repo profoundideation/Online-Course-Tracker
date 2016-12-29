@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 import { Auth } from '../../services/auth.service';
 import { FirebaseService } from '../../services/firebase.service';
@@ -8,6 +9,16 @@ import { AddformComponent } from '../addform/addform.component';
 import { UserCourse } from '../../firebase/UserCourse';
 import { Category } from '../../firebase/Category';
 import { Status } from '../../firebase/Status';
+=======
+import {Component, OnInit} from "@angular/core";
+import {Auth} from "../../services/auth.service";
+import {FirebaseService} from "../../services/firebase.service";
+import "rxjs/add/operator/map";
+import {UserCourse} from "../../firebase/UserCourse";
+import {AllCourses} from "../../firebase/AllCourses";
+import {Category} from "../../firebase/Category";
+import {Status} from "../../firebase/Status";
+>>>>>>> dev
 
 @Component({
     selector: 'courses',
@@ -18,7 +29,7 @@ import { Status } from '../../firebase/Status';
 export class CoursesComponent implements OnInit {
     profile: any;
     usercourses: UserCourse[];
-    allcourses: AllCourse[];
+    allcourses: AllCourses[];
     categories: Category[];
     statuses: Status[];
     appState: string;
@@ -36,7 +47,16 @@ export class CoursesComponent implements OnInit {
     ngOnInit() {
         this._firebaseService.getUserCourses()
             .subscribe(usercourses => {
-                this.usercourses = usercourses;
+              console.log(usercourses)
+              var list = []
+              this.profile = JSON.parse(localStorage.getItem('profile'));
+              for(var i in usercourses){
+                if(usercourses[i].name == this.profile.given_name){
+                  list.push(usercourses[i]["usercourses"]);
+                }
+              }
+              console.log('list : ', list);
+              this.usercourses = list;
             });
 
         this._firebaseService.getCategories()

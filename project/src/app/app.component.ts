@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from './services/firebase.service';
 import { Auth } from './services/auth.service';
@@ -7,6 +8,16 @@ import 'rxjs/add/operator/map';
 import { Category } from './firebase/Category';
 import { Status } from './firebase/Status';
 import { UserCourse } from './firebase/UserCourse';
+=======
+import {Component, OnInit} from "@angular/core";
+import {FirebaseService} from "./services/firebase.service";
+import {Auth} from "./services/auth.service";
+import "rxjs/add/operator/map";
+import {AllCourses} from "./firebase/AllCourses";
+import {Category} from "./firebase/Category";
+import {Status} from "./firebase/Status";
+import {UserCourse} from "./firebase/UserCourse";
+>>>>>>> dev
 
 @Component({
   selector: 'app-root',
@@ -16,7 +27,11 @@ import { UserCourse } from './firebase/UserCourse';
 })
 
 export class AppComponent implements OnInit {
+<<<<<<< HEAD
   // allcourses: allCourses[];
+=======
+  allcourses: AllCourses[];
+>>>>>>> dev
   categories: Category[];
   statuses: Status[];
   usercourses: UserCourse[];
@@ -33,10 +48,17 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+<<<<<<< HEAD
     this._firebaseService.getUserCourses()
       .subscribe(usercourses => {
         this.usercourses = usercourses;
       });
+=======
+    /*this._firebaseService.getCourses()
+      .subscribe(courses => {
+        this.courses = courses;
+      });*/
+>>>>>>> dev
 
     this._firebaseService.getCategories()
       .subscribe(categories => {
