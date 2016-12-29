@@ -4,7 +4,15 @@ import {UserCourse} from "../../firebase/UserCourse";
 import {Category} from "../../firebase/Category";
 import {Status} from "../../firebase/Status";
 
+<<<<<<< HEAD
+import { UserCourse } from '../../firebase/UserCourse';
+import { Category } from '../../firebase/Category';
+import { Status } from '../../firebase/Status';
+
+@Component({    
+=======
 @Component({
+>>>>>>> dev
   selector: 'addform',
   templateUrl: 'addform.component.html',
   styleUrls: [ 'addform.component.css' ],
@@ -12,9 +20,9 @@ import {Status} from "../../firebase/Status";
 })
 
 export class AddformComponent implements OnInit {
-  usercourses:UserCourse[];
-  categories:Category[];
-  statuses:Status[];
+  usercourses: UserCourse[];
+  categories: Category[];
+  statuses: Status[];
   appState: string;
   activeKey: string;
   activeSchool: string;
