@@ -119,7 +119,9 @@
                                    <th>School</th>
                                    <th>Course Name</th>
                                    <th>Category</th>
-                                   <th></th>
+                                   <th>Topic</th>
+                                   <th>Status</th>
+                                   <th>Review</th>
                               </tr>
                          </thead>
                          <tbody>
@@ -127,7 +129,17 @@
                                    <td>{{ usercourse.school }}</td>
                                    <td>{{ usercourse.name }}</td>
                                    <td>{{ usercourse.category }}</td>
+                                   <td>Topic <!-- {{ usercourse.topic }} --></td>
+                                   <td>{{ usercourse.status }}</td>
                                    <td>
+                                      <span class="glyphicon .glyphicon-star-empty glyphicon-star-empty"></span> 
+                                      <span class="glyphicon .glyphicon-star-empty glyphicon-star-empty"></span>
+                                      <span class="glyphicon .glyphicon-star-empty glyphicon-star-empty"></span>
+                                      <span class="glyphicon .glyphicon-star-empty glyphicon-star-empty"></span>
+                                      <span class="glyphicon .glyphicon-star-empty glyphicon-star-empty"></span>
+                                      <!-- {{ usercourse.reviews }} -->
+                                   </td>
+                                   <td style="float: right;">
                                         <button (click)="changeState('extend', usercourse.$key)" class="btn btn-info">More</button>
                                         <button (click)="showEdit(usercourse)" class="btn btn-warning">Edit</button>
                                         <button (click)="deleteUserCourse(usercourse.$key)" class="btn btn-danger">Delete</button>
@@ -146,8 +158,9 @@
      <h6> Check: </h6>
      <ul *ngFor="let usercourse of usercourses">         
           <li>{{ usercourse.name }}</li>
-          <li><p>Platform: {{ usercourse.school }}</p></li>
-          <li><p>Category: {{ usercourse.category }}</p></li>
-          <li><p>Status: {{ usercourse.status }}</p></li>
+          <li>eLearning Platform: {{ usercourse.school }}</li>
+          <li>Category: {{ usercourse.category }}</li>
+          <li>Topic: <!--{{ usercourse.topic }} --></li>          
+          <li>Status: {{ usercourse.status }}</li>
      </ul>
 </div>
