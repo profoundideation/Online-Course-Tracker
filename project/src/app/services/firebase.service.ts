@@ -43,13 +43,23 @@ getCourses(category:string = null) {
         return this.statuses;
     }
 
-  getUserCourses(category:string = null){
-      this.usercourses = this._af.database.list('/users') as
-      FirebaseListObservable<UserCourse[]>
+  getUserCourses(category:string = null) {
+      if(category != null){
+          this.usercourses = this._af.database.list('/users', {
+              query: {
+                  orderByChild: 'category',
+                  equalTo: category
+              }
+          }) as
+          FirebaseListObservable<UserCourse[]>
+      } else {
+          this.usercourses = this._af.database.list('/users') as
+          FirebaseListObservable<UserCourse[]>
+      }
       return this.usercourses;
   }
 
-    addCourse(newCourse) {
+    addCourse(newCourse){
         return this.allcourses.push(newCourse);
     }
 
