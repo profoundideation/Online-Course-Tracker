@@ -1,0 +1,6 @@
+<div class="jumbotron" *ngIf="auth.authenticated()">
+     <h6> Check: </h6>
+     <ul *ngFor="let usercourse of usercourses">         
+          <li>{{ usercourse.name }}</li>
+     </ul>
+</div>

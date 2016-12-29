@@ -130,7 +130,7 @@
                                    <td>{{ usercourse.category }}</td>
                                    <td>
                                         <button (click)="changeState('extend', usercourse.$key)" class="btn btn-info">More</button>
-                                        <button (click)="showEdit(usercourse)" class="btn btn-default">Edit</button>
+                                        <button (click)="showEdit(usercourse)" class="btn btn-warning">Edit</button>
                                         <button (click)="deleteUserCourse(usercourse.$key)" class="btn btn-warning">Delete</button>
                                    </td>
                               </tr>
@@ -140,14 +140,6 @@
           </div>
      </div>
 </div>
-
 <!-- Table of Courses Ends -->
 
-<!--
-  <div class="jumbotron">
-    <h6> Check: </h6>
-    <ul *ngFor="let course of courses">
-      <li>{{ course.name }}</li>
-    </ul>
-  </div>
--->
+<testing></testing>

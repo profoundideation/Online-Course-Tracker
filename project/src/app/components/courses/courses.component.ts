@@ -4,14 +4,15 @@ import { FirebaseService } from '../../services/firebase.service';
 import 'rxjs/add/operator/map';
 
 import { AddformComponent } from '../addform/addform.component';
+import { AllCourses } from '../../firebase/AllCourses';
 import { UserCourse } from '../../firebase/UserCourse';
 import { Category } from '../../firebase/Category';
 import { Status } from '../../firebase/Status';
-import {AllCourses} from '../../firebase/AllCourses';
 
 @Component({
     selector: 'courses',
     templateUrl: 'courses.component.html',
+    styleUrls: [ 'courses.component.css' ],
     providers: [ FirebaseService ]
 })
 
@@ -47,7 +48,7 @@ export class CoursesComponent implements OnInit {
               for(var course in list[0]){
                 userlist.push(list[0][course]);
               }
-              console.log('list: ', userlist)
+              // console.log('list: ', userlist)
               this.usercourses = userlist;
             });
 
@@ -89,7 +90,7 @@ export class CoursesComponent implements OnInit {
     showEdit(usercourse) {
         this.changeState('edit', usercourse.$key);
         this.activeSchool = usercourse.school,
-            this.activeName = usercourse.name;
+        this.activeName = usercourse.name;
         this.activeUrl = usercourse.url;
         this.activeCategory = usercourse.category;
         this.activeStatus = usercourse.status;
