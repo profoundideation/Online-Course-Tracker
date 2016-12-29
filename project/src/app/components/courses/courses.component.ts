@@ -7,7 +7,7 @@ import { AddformComponent } from '../addform/addform.component';
 import { UserCourse } from '../../firebase/UserCourse';
 import { Category } from '../../firebase/Category';
 import { Status } from '../../firebase/Status';
-import {AllCourses} from '../../firebase/AllCourses';
+import { AllCourses } from '../../firebase/AllCourses';
 
 @Component({
     selector: 'courses',
