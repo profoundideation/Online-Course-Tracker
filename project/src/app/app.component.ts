@@ -38,10 +38,12 @@ export class AppComponent implements OnInit {
                   this.usercourses = usercourses;
                 });
           */
-          /*this._firebaseService.getCourses()
-            .subscribe(courses => {
-              this.courses = courses;
-            });*/
+          /*
+            this._firebaseService.getCourses()
+              .subscribe(courses => {
+                this.courses = courses;
+            });
+          */
 
           this._firebaseService.getCategories()
                .subscribe(categories => {

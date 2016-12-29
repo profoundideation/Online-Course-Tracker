@@ -11,7 +11,7 @@ import { Status } from '../../firebase/Status';
 
 @Component({
      selector: 'testing',
-     styleUrls: ['testing.component.css'],
+     styleUrls: [ 'testing.component.css' ],
      templateUrl: 'testing.component.html'
 })
 
