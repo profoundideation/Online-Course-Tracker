@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 import { AppComponent } from '../../app.component';
 
-import { Course } from '../../firebase/Course';
+import { Course } from '../../firebase/UserCourse';
 import { Category } from '../../firebase/Category';
 import { Status } from '../../firebase/Status';
 
@@ -14,7 +14,7 @@ import { Status } from '../../firebase/Status';
 })     
 
 export class AddformComponent implements OnInit {
-  courses:Course[];
+  usercourses:UserCourse[];
   categories:Category[];
   statuses:Status[];
   appState: string;
@@ -28,9 +28,9 @@ export class AddformComponent implements OnInit {
     constructor(private _firebaseService: FirebaseService) {} 
     
     ngOnInit() {
-        this._firebaseService.getCourses()
-          .subscribe(courses => {        
-            this.courses = courses;
+        this._firebaseService.getUserCourses()
+          .subscribe(usercourses => {        
+            this.usercourses = usercourses;
           });
     
         this._firebaseService.getCategories()
