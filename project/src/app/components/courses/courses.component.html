@@ -124,14 +124,14 @@
                               </tr>
                          </thead>
                          <tbody>
-                              <tr *ngFor="let usercourse of usercourses"></tr>
+                              <tr *ngFor="let usercourse of usercourses">
                                    <td>{{ usercourse.school }}</td>
                                    <td>{{ usercourse.name }}</td>
                                    <td>{{ usercourse.category }}</td>
                                    <td>
                                         <button (click)="changeState('extend', usercourse.$key)" class="btn btn-info">More</button>
                                         <button (click)="showEdit(usercourse)" class="btn btn-warning">Edit</button>
-                                        <button (click)="deleteUserCourse(usercourse.$key)" class="btn btn-danger">Delete</button>
+                                        <button (click)="deleteUserCourse(usercourse.$key)" class="btn btn-warning">Delete</button>
                                    </td>
                               </tr>
                          </tbody>
@@ -140,3 +140,4 @@
           </div>
      </div>
 </div>
+<!-- Table of Courses Ends -->
