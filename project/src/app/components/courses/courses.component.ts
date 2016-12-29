@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+import { Component, OnInit } from '@angular/core';
+import { Auth } from '../../services/auth.service';
+import { FirebaseService } from '../../services/firebase.service';
+import 'rxjs/add/operator/map';
+
+import { AddformComponent } from '../addform/addform.component';
+
+import { UserCourse } from '../../firebase/UserCourse';
+import { Category } from '../../firebase/Category';
+import { Status } from '../../firebase/Status';
+=======
 import {Component, OnInit} from "@angular/core";
 import {Auth} from "../../services/auth.service";
 import {FirebaseService} from "../../services/firebase.service";
@@ -6,6 +18,7 @@ import {UserCourse} from "../../firebase/UserCourse";
 import {AllCourses} from "../../firebase/AllCourses";
 import {Category} from "../../firebase/Category";
 import {Status} from "../../firebase/Status";
+>>>>>>> dev
 
 @Component({
     selector: 'courses',
@@ -84,13 +97,13 @@ export class CoursesComponent implements OnInit {
         this.appState = state;
     }
 
-    showEdit(course) {
-        this.changeState('edit', course.$key);
-        this.activeSchool = course.school,
-            this.activeName = course.name;
-        this.activeUrl = course.url;
-        this.activeCategory = course.category;
-        this.activeStatus = course.status;
+    showEdit(usercourse) {
+        this.changeState('edit', usercourse.$key);
+        this.activeSchool = usercourse.school,
+            this.activeName = usercourse.name;
+        this.activeUrl = usercourse.url;
+        this.activeCategory = usercourse.category;
+        this.activeStatus = usercourse.status;
     }
 
     updateCourse() {

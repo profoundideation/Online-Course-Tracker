@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 import { AppComponent } from '../../app.component';
 
-import { Course } from '../../firebase/UserCourse';
+import { UserCourse } from '../../firebase/UserCourse';
 import { Category } from '../../firebase/Category';
 import { Status } from '../../firebase/Status';
 
@@ -14,7 +14,7 @@ import { Status } from '../../firebase/Status';
 })     
 
 export class EditformComponent implements OnInit {
-  @Input() course: string;
+  @Input()   
   usercourses: UserCourse[];
   allcourses: AllCourse[];
   categories: Category[];
@@ -30,9 +30,9 @@ export class EditformComponent implements OnInit {
     constructor(private _firebaseService: FirebaseService) {} 
     
       ngOnInit() {
-        this._firebaseService.getCourses()
-          .subscribe(courses => {        
-            this.courses = courses;
+        this._firebaseService.getUserCourses()
+          .subscribe(usercourses => {        
+            this.usercourses = usercourses;
           });
     
         this._firebaseService.getCategories()
@@ -58,13 +58,13 @@ export class EditformComponent implements OnInit {
         this.appState = state;
      }
 
-     showEdit(course) {
-       this.changeState('edit', course.$key);
-       this.activeSchool = course.school,
-       this.activeName = course.name;
-       this.activeUrl = course.url;
-       this.activeCategory = course.category;
-       this.activeStatus = course.status;
+     showEdit(usercourse) {
+       this.changeState('edit', usercourse.$key);
+       this.activeSchool = usercourse.school,
+       this.activeName = usercourse.name;
+       this.activeUrl = usercourse.url;
+       this.activeCategory = usercourse.category;
+       this.activeStatus = usercourse.status;
      }
      
      updateCourse() {
