@@ -7,10 +7,10 @@ import { AUTH_PROVIDERS } from 'angular2-jwt';
 
 import { routing, appRoutingProviders } from './app.routing';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HomeComponent } from './components/home/home.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AddformComponent } from './components/addform/addform.component';
