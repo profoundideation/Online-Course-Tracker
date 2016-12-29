@@ -3,7 +3,7 @@
 
 <!-- EDIT FORM START -->
 <div *ngIf="appState == 'edit'" class="row">
-     <div class="col-md-10 col-md-offset-1">
+     <div class="col-md-10 col-md-offset-1 courses-table-bg3">
           <p>
                <button (click)="changeState('default')" class="btn btn-warning" style="float:right;"> X </button>
           </p>
@@ -53,7 +53,7 @@
 <!-- EDIT FORM ENDS -->
 
 <!-- EXTEND SECTION Starts -->
-<div *ngIf="appState == 'extend'" class="container-fluid">
+<div *ngIf="appState == 'extend'" class="container-fluid courses-table-bg2">
      <div class="row">
           <div class="col-md-12">
                <p>
@@ -108,9 +108,8 @@
 </div>
 <!-- EXTEND SECTION ENDS -->
 
-
 <!-- Table of Courses Start -->
-<div class="container-fluid">
+<div class="container-fluid courses-table-bg">
      <div class="row">
           <div class="col-md-12">
                <div *ngIf="usercourses" class="table-responsive">
@@ -120,7 +119,9 @@
                                    <th>School</th>
                                    <th>Course Name</th>
                                    <th>Category</th>
-                                   <th></th>
+                                   <th>Topic</th>
+                                   <th>Status</th>
+                                   <th>Review</th>
                               </tr>
                          </thead>
                          <tbody>
@@ -128,10 +129,20 @@
                                    <td>{{ usercourse.school }}</td>
                                    <td>{{ usercourse.name }}</td>
                                    <td>{{ usercourse.category }}</td>
+                                   <td>Topic <!-- {{ usercourse.topic }} --></td>
+                                   <td>{{ usercourse.status }}</td>
                                    <td>
+                                      <span class="glyphicon .glyphicon-star-empty glyphicon-star-empty"></span> 
+                                      <span class="glyphicon .glyphicon-star-empty glyphicon-star-empty"></span>
+                                      <span class="glyphicon .glyphicon-star-empty glyphicon-star-empty"></span>
+                                      <span class="glyphicon .glyphicon-star-empty glyphicon-star-empty"></span>
+                                      <span class="glyphicon .glyphicon-star-empty glyphicon-star-empty"></span>
+                                      <!-- {{ usercourse.reviews }} -->
+                                   </td>
+                                   <td style="float: right;">
                                         <button (click)="changeState('extend', usercourse.$key)" class="btn btn-info">More</button>
                                         <button (click)="showEdit(usercourse)" class="btn btn-warning">Edit</button>
-                                        <button (click)="deleteUserCourse(usercourse.$key)" class="btn btn-warning">Delete</button>
+                                        <button (click)="deleteUserCourse(usercourse.$key)" class="btn btn-danger">Delete</button>
                                    </td>
                               </tr>
                          </tbody>
@@ -142,4 +153,14 @@
 </div>
 <!-- Table of Courses Ends -->
 
-<testing></testing>
+<!-- <testing></testing> -->
+<div class="jumbotron" *ngIf="auth.authenticated()">
+     <h6> Check: </h6>
+     <ul *ngFor="let usercourse of usercourses">         
+          <li>{{ usercourse.name }}</li>
+          <li>eLearning Platform: {{ usercourse.school }}</li>
+          <li>Category: {{ usercourse.category }}</li>
+          <li>Topic: <!--{{ usercourse.topic }} --></li>          
+          <li>Status: {{ usercourse.status }}</li>
+     </ul>
+</div>
