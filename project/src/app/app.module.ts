@@ -21,34 +21,34 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { Auth } from './services/auth.service';
 import { AuthGuard } from './auth/auth.guard';
 
-export const firebaseConfig = {  
-  apiKey: "AIzaSyBE0_9cQ8vmZkj-ZYS0RYZcDCcif13uzdA",
-  authDomain: "course-tracker-46e40.firebaseapp.com",
-  databaseURL: "https://course-tracker-46e40.firebaseio.com",
-  storageBucket: "course-tracker-46e40.appspot.com",
+export const firebaseConfig = {
+     apiKey: "AIzaSyBE0_9cQ8vmZkj-ZYS0RYZcDCcif13uzdA",
+     authDomain: "course-tracker-46e40.firebaseapp.com",
+     databaseURL: "https://course-tracker-46e40.firebaseio.com",
+     storageBucket: "course-tracker-46e40.appspot.com",
 };
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AddformComponent,
-    NavbarComponent,
-    HeaderComponent, 
-    HomeComponent, 
-    WelcomeComponent,
-    CoursesComponent,
-    ProfileComponent, 
-    FooterComponent     
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    routing, 
-    AngularFireModule.initializeApp(firebaseConfig)
-  ],
-  providers: [ appRoutingProviders, AUTH_PROVIDERS, Auth, AuthGuard ],
-  bootstrap: [ AppComponent ]
+     declarations: [
+          AppComponent,
+          AddformComponent,
+          NavbarComponent,
+          HeaderComponent,
+          HomeComponent,
+          WelcomeComponent,
+          CoursesComponent,
+          ProfileComponent,
+          FooterComponent
+     ],
+     imports: [
+          BrowserModule,
+          FormsModule,
+          HttpModule,
+          routing,
+          AngularFireModule.initializeApp(firebaseConfig)
+     ],
+     providers: [appRoutingProviders, AUTH_PROVIDERS, Auth, AuthGuard],
+     bootstrap: [AppComponent]
 })
 
 export class AppModule { }

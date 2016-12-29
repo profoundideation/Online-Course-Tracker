@@ -10,6 +10,7 @@ import { User } from "../firebase/User";
 
 @Injectable()
 export class FirebaseService {
+    
      allcourses: FirebaseListObservable < AllCourses[] > ;
      usercourses: FirebaseListObservable < UserCourse[] > ;
      categories: FirebaseListObservable < Category[] > ;
@@ -20,9 +21,7 @@ export class FirebaseService {
 
      getCourses(category: string = null) {
           if (category != null) {
-
                //        this.courses = this._af.database.list('/usercourses', {
-
                this.allcourses = this._af.database.list('/allcourses', {
                     query: {
                          orderByChild: 'category',
@@ -37,7 +36,6 @@ export class FirebaseService {
                */
                this.allcourses = this._af.database.list('/allcourses') as
                FirebaseListObservable < AllCourses[] >
-
           }
           return this.allcourses;
      }
