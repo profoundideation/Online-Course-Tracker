@@ -3,10 +3,10 @@ import { FirebaseService } from './services/firebase.service';
 import { Auth } from './services/auth.service';
 import 'rxjs/add/operator/map';
 
-import { Course } from './firebase/Course';
+// import { Course } from './firebase/Course';
 import { Category } from './firebase/Category';
 import { Status } from './firebase/Status';
-import { UserCourses } from "./firebase/UserCourses";
+import { UserCourse } from './firebase/UserCourse';
 
 @Component({
   selector: 'app-root',
@@ -16,10 +16,10 @@ import { UserCourses } from "./firebase/UserCourses";
 })
 
 export class AppComponent implements OnInit {
-  allcourses: allCourse[];
+  // allcourses: allCourses[];
   categories: Category[];
   statuses: Status[];
-  usercourses: UserCourses[];
+  usercourses: UserCourse[];
   profile: any;
   appState: string;
   activeKey: string;

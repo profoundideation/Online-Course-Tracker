@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 import { AppComponent } from '../../app.component';
 
-import { Course } from '../../firebase/UserCourse';
+import { UserCourse } from '../../firebase/UserCourse';
 import { Category } from '../../firebase/Category';
 import { Status } from '../../firebase/Status';
 
@@ -14,9 +14,9 @@ import { Status } from '../../firebase/Status';
 })     
 
 export class AddformComponent implements OnInit {
-  usercourses:UserCourse[];
-  categories:Category[];
-  statuses:Status[];
+  usercourses: UserCourse[];
+  categories: Category[];
+  statuses: Status[];
   appState: string;
   activeKey: string;
   activeSchool: string;

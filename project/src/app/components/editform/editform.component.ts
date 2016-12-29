@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FirebaseService } from '../../services/firebase.service';
 import { AppComponent } from '../../app.component';
 
-import { Course } from '../../firebase/UserCourse';
+import { UserCourse } from '../../firebase/UserCourse';
 import { Category } from '../../firebase/Category';
 import { Status } from '../../firebase/Status';
 
