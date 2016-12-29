@@ -1,4 +1,4 @@
-export interface Category {
+export interface AllCourses {
     $key?: string;
     school?: string;
     name: string;
