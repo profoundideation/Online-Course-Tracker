@@ -3,14 +3,14 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import 'rxjs/add/operator/map';
 
 import { Course } from '../firebase/Course';
-import { UserCourses } from '../firebase/UserCourses';
+import { User } from '../firebase/User';
 import { Category } from '../firebase/Category';
 import { Status } from '../firebase/Status';
 
 @Injectable()
 export class FirebaseService{
     courses: FirebaseListObservable<Course[]>;
-    usercourses: FirebaseListObservable<UserCourses[]>;
+    usercourses: FirebaseListObservable<User[]>;
     categories: FirebaseListObservable<Category[]>;
     statuses: FirebaseListObservable<Status[]>;
 
@@ -45,8 +45,8 @@ getCourses(category:string = null) {
     }
 
   getUserCourses() {
-      this.usercourses = this._af.database.list('/user') as
-      FirebaseListObservable<UserCourses[]>
+      this.usercourses = this._af.database.list('/users') as
+      FirebaseListObservable<User[]>
       return this.usercourses;
   }
 
