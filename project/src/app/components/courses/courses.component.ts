@@ -47,16 +47,19 @@ export class CoursesComponent implements OnInit {
     ngOnInit() {
         this._firebaseService.getUserCourses()
             .subscribe(usercourses => {
-              console.log(usercourses)
-              var list = []
+              var list = [];
+              var userlist = [];
               this.profile = JSON.parse(localStorage.getItem('profile'));
               for(var i in usercourses){
                 if(usercourses[i].name == this.profile.given_name){
                   list.push(usercourses[i]["usercourses"]);
                 }
               }
-              console.log('list : ', list);
-              this.usercourses = list;
+              for(var course in list[0]){
+                userlist.push(list[0][course]);
+              }
+              console.log('list: ', userlist)
+              this.usercourses = userlist;
             });
 
         this._firebaseService.getCategories()

@@ -81,7 +81,7 @@ export class AppComponent implements OnInit {
             list.push(users[i]["usercourses"]);
           }
         }
-        console.log('list : ', list);
+        //console.log('list : ', list);
         this.usercourses = list;
       });
   }
