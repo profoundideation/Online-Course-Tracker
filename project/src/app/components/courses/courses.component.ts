@@ -17,7 +17,7 @@ import { Status } from '../../firebase/Status';
 
 export class CoursesComponent implements OnInit {
     profile: any;
-    usercourses: UserCourse[];
+    usercourses: UserCourses[];
     allcourses: AllCourse[];
     categories: Category[];
     statuses: Status[];

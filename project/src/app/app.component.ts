@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 import { Course } from './firebase/Course';
 import { Category } from './firebase/Category';
 import { Status } from './firebase/Status';
-import {UserCourses} from "./firebase/UserCourses";
+import { UserCourses } from "./firebase/UserCourses";
 
 @Component({
   selector: 'app-root',
@@ -16,7 +16,7 @@ import {UserCourses} from "./firebase/UserCourses";
 })
 
 export class AppComponent implements OnInit {
-  courses: Course[];
+  allcourses: allCourse[];
   categories: Category[];
   statuses: Status[];
   usercourses: UserCourses[];
@@ -33,9 +33,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._firebaseService.getCourses()
-      .subscribe(courses => {
-        this.courses = courses;
+    this._firebaseService.getUserCourses()
+      .subscribe(usercourses => {
+        this.usercourses = usercourses;
       });
 
     this._firebaseService.getCategories()
