@@ -2,16 +2,14 @@ import { Component } from '@angular/core';
 import { Auth } from '../../services/auth.service';
 
 @Component({
-  selector: 'home',
-  styleUrls: [ 'home.component.css' ],
-  templateUrl: 'home.component.html'
+  selector: 'login',
+  styleUrls: [ 'login.component.css' ],
+  templateUrl: 'login.component.html'
 })
 
-export class HomeComponent { 
+export class LoginComponent { 
   constructor(private auth: Auth) {
-  }
-
-  
+  }  
     class loginWithGoogle() {  
       var provider = new firebase.auth.GoogleAuthProvider();  
       firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -19,8 +17,6 @@ export class HomeComponent {
       }).catch(function(error) {
         console.log(error);
       });
-    }
-    
-
+    }    
 }
 
