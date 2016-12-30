@@ -37,6 +37,7 @@ export class Auth {
                         alert(error);
                         return;
                     }
+
                 });
             });
         });
