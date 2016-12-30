@@ -8,6 +8,7 @@ import { Category } from './firebase/Category';
 import { Status } from './firebase/Status';
 import { UserCourse } from './firebase/UserCourse';
 import { AllCourses } from "./firebase/AllCourses";
+
 @Component({
      selector: 'app-root',
      templateUrl: './app.component.html',
