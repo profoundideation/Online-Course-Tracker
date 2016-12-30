@@ -10,7 +10,7 @@ const appRoutes: Routes = [{
 }, {
      path: 'profile',
      component: ProfileComponent,
-     canActivate: [AuthGuard]
+     canActivate: [ AuthGuard ]
 }];
 
 export const appRoutingProviders: any[] = [];
