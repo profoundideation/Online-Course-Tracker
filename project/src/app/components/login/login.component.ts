@@ -19,10 +19,20 @@ export class LoginComponent implements onInit {
     console.log("starting Login Page. Authenticated is: " + this.loginService.isAuthenticated);
 
     if (this.loginService.isAuthenticated) {
-      this.router.navigate(['/'])
-    }
-  }
+      this.router.navigate(['/welcome']);
+    } else {
+      this.loginService.login().then((authState) => {
 
+        if (authState && authState.uid) {
+          console.log("Login Successful for " + this.authState.auth.displayName);
+            this.router.navigate(['/welcome']);
+          } else {
+            this.errorDuringLogin = true;
+          }      
+        })
+    };
+  }
+/*
     class loginWithGoogle() {  
       var provider = new firebase.auth.GoogleAuthProvider();  
       firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -33,3 +43,4 @@ export class LoginComponent implements onInit {
     }    
 }
 
+*/
