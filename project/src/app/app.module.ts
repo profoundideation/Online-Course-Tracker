@@ -20,6 +20,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AddformComponent } from './components/addform/addform.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { TestingComponent } from './components/testing/testing.component';
+import { MembersComponent } from './components/members/members.component';
 
 // import { EditformComponent } from './components/editform/editform.component';
 // import { ExtendsectionComponent } from './components/extendsection/extendsection.component';
@@ -45,6 +46,7 @@ export const firebaseConfig = {
           CoursesComponent,
           ProfileComponent,
           TestingComponent,
+          MembersComponent,
           FooterComponent
      ],
      imports: [
