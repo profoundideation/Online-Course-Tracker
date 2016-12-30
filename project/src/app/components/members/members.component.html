@@ -1,11 +1,14 @@
 <h3>Welcome Home</h3>
+<!--
 <h5 *ngIf="auth.authenticated()">You are logged in</h5>
 <h5 *ngIf="!auth.authenticated()">You are not logged in, please click on the login link above to log in.</h5>
 
 <courses></courses>
+-->
 
+Members:
 
-  <div *ngIf="auth.authenticated() && auth.userProfile">
+  <div *ngIf="auth.authenticated() || auth.userProfile">
     <h4>You are logged in</h4>
     <div class="row">
       <div class="col-md-6">
@@ -16,6 +19,7 @@
         <p><strong>Nickname: </strong> {{auth.userProfile.nickname}}</p>
         <p><strong>Created At: </strong> {{auth.userProfile.created_at}}</p>
         <p><strong>Updated At: </strong> {{auth.userProfile.updated_at}}</p>
+        <p><strong>User ID: </strong> {{auth.userProfile.user_id}}</p>
       </div>
     </div>
   </div>
