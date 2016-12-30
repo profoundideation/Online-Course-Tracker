@@ -11,8 +11,8 @@ import { AllCourses } from "./firebase/AllCourses";
 @Component({
      selector: 'app-root',
      templateUrl: './app.component.html',
-     styleUrls: ['./app.component.css'],
-     providers: [FirebaseService]
+     styleUrls: [ './app.component.css' ],
+     providers: [ FirebaseService ]
 })
 
 export class AppComponent implements OnInit {
@@ -39,10 +39,10 @@ export class AppComponent implements OnInit {
                 });
           */
           /*
-            this._firebaseService.getCourses()
-              .subscribe(courses => {
-                this.courses = courses;
-            });
+              this._firebaseService.getCourses()
+                .subscribe(courses => {
+                  this.courses = courses;
+              });
           */
 
           this._firebaseService.getCategories()

@@ -34,6 +34,7 @@ export class Auth {
                 if (error) {
                     throw new Error(error);
                 }
+
                 localStorage.setItem('profile', JSON.stringify(profile));
                 self.userProfile = profile;
 
@@ -41,15 +42,15 @@ export class Auth {
 
                 // Fetch profile information                
                 self.lock.getProfile(authResult.idToken, (error, profile) => {
-                    if (error) {
-                        // Handle error
+                    if (error) {                        
                         alert(error);
                         return;
                     }
                 });
+
             });
         });
-        
+
     }
 
     public login() {        
@@ -69,8 +70,8 @@ export class Auth {
                   });
                 }
               });
-            }, function() {
-              // Error callback
+            }, function(error) {
+              alert(error);
             });        
     }
 
