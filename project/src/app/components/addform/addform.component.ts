@@ -10,7 +10,7 @@ import { Status } from '../../firebase/Status';
      selector: 'addform',
      templateUrl: 'addform.component.html',
      styleUrls: ['addform.component.css'],
-     providers: [FirebaseService]
+     providers: [ FirebaseService ]
 })
 
 export class AddformComponent implements OnInit {
@@ -25,7 +25,7 @@ export class AddformComponent implements OnInit {
      activeCategory: string;
      activeStatus: string;
 
-     constructor(private _firebaseService: FirebaseService) {}
+     constructor(private _firebaseService: FirebaseService) { }
 
      ngOnInit() {
           this._firebaseService.getUserCourses()

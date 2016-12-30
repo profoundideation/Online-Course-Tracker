@@ -69,5 +69,8 @@ export class AppComponent implements OnInit {
                     //console.log('list : ', list);
                     this.usercourses = list;
                });
+
+        // this.
+
      }
 }

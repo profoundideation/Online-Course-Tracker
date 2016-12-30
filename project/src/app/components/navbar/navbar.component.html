@@ -13,13 +13,13 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href=".">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="#">About</a></li>       
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Blog</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">        
+        <li><a href="#">Support</a></li>
         <li><a href="#" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</a>      
         <li><a href="./profile" routerLink="/profile" *ngIf="auth.authenticated()">Profile</a>   
-        <li><a href="#" (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</a>
-        <li><a href="#">Support</a></li>
+        <li><a href="#" (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</a>        
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

@@ -4,7 +4,7 @@ import { Auth } from '../../services/auth.service';
 @Component({
   selector: 'welcome',
   templateUrl: 'welcome.component.html',
-  styleUrls: ['welcome.component.css']
+  styleUrls: [ 'welcome.component.css' ]
 })
 
 export class WelcomeComponent { 

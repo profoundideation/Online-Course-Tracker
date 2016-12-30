@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { Auth } from '../../services/auth.service';
 
 @Component({
-  selector: 'navbar',
-  styleUrls: [ 'navbar.component.css' ],
-  templateUrl: 'navbar.component.html'
+  selector: 'navbar',  
+  templateUrl: 'navbar.component.html',
+  styleUrls: [ 'navbar.component.css' ]
 })
 
 export class NavbarComponent {
