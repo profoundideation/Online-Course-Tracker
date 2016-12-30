@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate {
                return true;
           } else {
                // console.log('BLOCKED BY AUTH0 GUARD');
-               this.router.navigate(['/login']);
+               this.router.navigate(['/']);
                return false;
           }
      }

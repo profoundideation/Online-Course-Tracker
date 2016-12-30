@@ -11,9 +11,8 @@ declare var Auth0Lock: any;
 
 export class Auth {
     lock = new Auth0Lock('4XFEYeZgRXhrvplAPCjI3d1yVvQ7M7pl', 'profound.auth0.com', options);
-
-    //Store profile object in auth class
-    userProfile: Object;
+    
+    userProfile: any;
     
     constructor() {
         this.userProfile = JSON.parse(localStorage.getItem('profile'));
@@ -24,7 +23,7 @@ export class Auth {
                     throw new Error(error);
                 }                
                 localStorage.setItem('profile', JSON.stringify(profile));                
-                this.userProfile = profile;
+                     this.userProfile = profile;
 
                 localStorage.setItem('id_token', authResult.idToken);
 
@@ -36,6 +35,7 @@ export class Auth {
                         alert(error);
                         return;
                     }
+
                 });
             });
         });
