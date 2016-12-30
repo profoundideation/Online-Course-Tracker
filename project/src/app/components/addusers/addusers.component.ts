@@ -7,9 +7,9 @@ import { Status } from '../../firebase/Status';
 
 @Component({
 
-     selector: 'addform',
-     templateUrl: 'addform.component.html',
-     styleUrls: ['addform.component.css'],
+     selector: 'addusers',
+     templateUrl: 'addusers.component.html',
+     styleUrls: ['addusers.component.css'],
      providers: [ FirebaseService ]
 })
 
