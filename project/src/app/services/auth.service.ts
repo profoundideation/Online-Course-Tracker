@@ -14,22 +14,23 @@ export class Auth {
 
     //Store profile object in auth class
     userProfile: Object;
-    
+
     constructor() {
         this.userProfile = JSON.parse(localStorage.getItem('profile'));
+        var self = this;
 
         this.lock.on("authenticated", (authResult:any) => {
-            this.lock.getProfile(authResult.idToken, function(error:any, profile:any) {
+            self.lock.getProfile(authResult.idToken, function(error:any, profile:any) {
                 if (error) {
                     throw new Error(error);
-                }                
-                localStorage.setItem('profile', JSON.stringify(profile));                
-                this.userProfile = profile;
+                }
+                localStorage.setItem('profile', JSON.stringify(profile));
+                self.userProfile = profile;
 
                 localStorage.setItem('id_token', authResult.idToken);
 
                 // Fetch profile information                
-                this.lock.getProfile(authResult.idToken, (error, profile) => {
+                self.lock.getProfile(authResult.idToken, (error, profile) => {
 
                     if (error) {
                         // Handle error
