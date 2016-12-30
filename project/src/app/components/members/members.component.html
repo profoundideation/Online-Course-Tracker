@@ -19,8 +19,9 @@ Members:
         <p><strong>Nickname: </strong> {{auth.userProfile.nickname}}</p>
         <p><strong>Created At: </strong> {{auth.userProfile.created_at}}</p>
         <p><strong>Updated At: </strong> {{auth.userProfile.updated_at}}</p>
-        <p><strong>User ID: </strong> {{auth.userProfile.user_id}}</p>
+        <p><strong>User ID: </strong> {{ auth.userProfile.user_id }}</p>
       </div>
     </div>
   </div>
+  
   <h4 *ngIf="!auth.authenticated()">You are not logged in, please click 'Log in' button to login</h4>
