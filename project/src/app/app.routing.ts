@@ -10,8 +10,10 @@ const appRoutes: Routes = [{
 }, {
      path: 'profile',
      component: ProfileComponent,
-     canActivate: [AuthGuard]
+     canActivate: [ AuthGuard ]
 }];
 
-export const appRoutingProviders: any[] = [];
+export const appRoutingProviders: any[] = [
+    AuthGuard
+];
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

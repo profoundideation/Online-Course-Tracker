@@ -13,4 +13,5 @@ export class ProfileComponent {
     this.profile = JSON.parse(localStorage.getItem('profile'));
     console.log(this.profile);
   }
+  
 }

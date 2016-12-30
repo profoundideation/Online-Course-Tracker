@@ -4,6 +4,10 @@ import { AngularFireModule } from 'angularfire2';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AUTH_PROVIDERS } from 'angular2-jwt';
+// import { } angular-ui
+// import { } angular-material
+// import { } angular-aria
+// import { } auth0-angular
 
 import { routing, appRoutingProviders } from './app.routing';
 import { AppComponent } from './app.component';
