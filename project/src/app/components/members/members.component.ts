@@ -10,4 +10,5 @@ import { Auth } from '../../services/auth.service';
 export class MembersComponent {
   constructor(private auth: Auth) {
   }
+
 }
