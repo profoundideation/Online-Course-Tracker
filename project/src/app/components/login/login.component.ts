@@ -25,7 +25,7 @@ export class LoginComponent implements onInit {
 
         if (authState && authState.uid) {
           console.log("Login Successful for " + this.authState.auth.displayName);
-            this.router.navigate(['/welcome']);
+            this.router.navigate(['/members']);
           } else {
             this.errorDuringLogin = true;
           }      
