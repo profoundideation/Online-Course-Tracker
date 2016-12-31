@@ -5,7 +5,7 @@
                <button (click)="changeState('add')" class="btn btn-info">Add Course(s)</button>
           </div>
           <div class="col-md-6">
-                <!--<label for="FilterCategory"> Filter Category</label>-->
+                <!-- <label for="FilterCategory"> Filter Category</label> -->
                 <select (change)="filterCategory(filteredCategory.value)" #filteredCategory class="form-control">
                     <option value="All">All</option>
                     <option *ngFor="let category of categories" value="{{category.name}}">{{ category.name }}</option>

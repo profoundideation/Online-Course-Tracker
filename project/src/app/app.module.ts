@@ -21,6 +21,7 @@ import { AddformComponent } from './components/addform/addform.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { TestingComponent } from './components/testing/testing.component';
 import { MembersComponent } from './components/members/members.component';
+import { SlideshowComponent } from './components/slideshow/slideshow.component';
 
 // import { EditformComponent } from './components/editform/editform.component';
 // import { ExtendsectionComponent } from './components/extendsection/extendsection.component';
@@ -47,6 +48,7 @@ export const firebaseConfig = {
           ProfileComponent,
           TestingComponent,
           MembersComponent,
+          SlideshowComponent,
           FooterComponent
      ],
      imports: [

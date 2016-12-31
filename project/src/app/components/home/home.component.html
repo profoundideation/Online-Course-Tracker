@@ -1,4 +1,3 @@
-
 <div class="bs-example" *ngIf="auth.authenticated()">
     <div class="alert alert-warning">
         <a href="#" class="close" data-dismiss="alert">&times;</a>
@@ -11,7 +10,5 @@
             <h5>You are not logged in, please click on the login link above to log in.</h5>
         </div>
 </div>
-
 <courses *ngIf="auth.authenticated()"></courses>
-
 <welcome *ngIf="!auth.authenticated()"></welcome>

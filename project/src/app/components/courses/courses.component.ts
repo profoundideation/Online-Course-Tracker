@@ -9,6 +9,8 @@ import { UserCourse } from '../../firebase/UserCourse';
 import { Category } from '../../firebase/Category';
 import { Status } from '../../firebase/Status';
 
+declare var i: any;
+
 @Component({
     selector: 'courses',
     templateUrl: 'courses.component.html',
@@ -37,15 +39,15 @@ export class CoursesComponent implements OnInit {
     ngOnInit() {
         this._firebaseService.getUserCourses()
             .subscribe(usercourses => {
-              var list = [];
-              var userlist = [];
+              let list = [];
+              let userlist = [];
               this.profile = JSON.parse(localStorage.getItem('profile'));
-              for(var i in usercourses){
+              for (let i in usercourses){
                 if(usercourses[i].name == this.profile.given_name){
                   list.push(usercourses[i]["usercourses"]);
                 }
               }
-              for(var course in list[0]){
+              for (let course in list[0]){
                 userlist.push(list[0][course]);
               }
               // console.log('list: ', userlist)

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Auth } from '../../services/auth.service';
 
+declare var i: any;
+
 @Component({
   selector: 'members',
   styleUrls: [ 'members.component.css' ],
@@ -9,5 +11,5 @@ import { Auth } from '../../services/auth.service';
 
 export class MembersComponent {
   constructor(private auth: Auth) {
-  }
+  }  
 }
