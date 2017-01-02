@@ -19,7 +19,7 @@ import { AllCourses } from "./firebase/AllCourses";
 export class AppComponent implements OnInit {
      allcourses: AllCourses[];
      categories: Category[];
-     statuses: Status[];
+     // statuses: Status[];
      usercourses: UserCourse[];
      profile: any;
      appState: string;
@@ -46,18 +46,19 @@ export class AppComponent implements OnInit {
               });
           */
 
+/*
+
           this._firebaseService.getCategories()
                .subscribe(categories => {
                     //console.log(categories);
                     this.categories = categories;
-               });
 
           this._firebaseService.getStatuses()
                .subscribe(statuses => {
-                    //console.log(categories);
-                    this.statuses = statuses;
+                    // console.log(categories);
+                    // this.statuses = statuses;
                });
-
+          
           this._firebaseService.getUserCourses()
                .subscribe(users => {
                     var list = []
@@ -70,6 +71,8 @@ export class AppComponent implements OnInit {
                     //console.log('list : ', list);
                     this.usercourses = list;
                });
+
+*/
 
         // this.
 
