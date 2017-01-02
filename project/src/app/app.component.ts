@@ -76,5 +76,10 @@ export class AppComponent implements OnInit {
 
         // this.
 
+/*
+        firebaseAuthConfig({
+          method: AuthMethods.Popup
+        })
      }
+     */
 }
