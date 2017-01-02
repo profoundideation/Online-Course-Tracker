@@ -8,13 +8,15 @@ import { Router } from '@angular/router';
   styleUrls: [ 'login.component.css' ]
 })
 
-export class LoginComponent implements onInit { 
-
+export class LoginComponent /* implements onInit */ { 
+/*
   private errorDuringLogin = false;
 
   constructor(private auth: Auth, loginService: LoginService, private router: Router) {
+    */
+    
   }  
-
+/*
   ngOnInit() {
     console.log("starting Login Page. Authenticated is: " + this.loginService.isAuthenticated);
 
@@ -32,6 +34,7 @@ export class LoginComponent implements onInit {
         })
     };
   }
+  */
 /*
     class loginWithGoogle() {  
       var provider = new firebase.auth.GoogleAuthProvider();  
