@@ -94,6 +94,23 @@ export class AppComponent implements OnInit {
         firebaseAuthConfig({
           method: AuthMethods.Popup
         })
+        */
      }
-     */
+     
+     firebaseAuthConfig({
+          method: AuthMethods.Popup
+        })
+        
+    login() {
+      this.af.auth.login({
+        provider: AuthProviders.Google,
+        method: AuthMethods.Redirect
+      });
+    }
+     
+    logout() {
+      this.af.auth.logout();
+      
+    }
+
 }

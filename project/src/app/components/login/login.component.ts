@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 
 export class LoginComponent /* implements onInit */ { 
-
+/*
     login() {
       this.af.auth.login({
         provider: AuthProviders.Google
@@ -19,8 +19,8 @@ export class LoginComponent /* implements onInit */ {
     logout() {
       this.af.auth.logout();
     }
-    
-}
+    */
+// }
 /*
   private errorDuringLogin = false;
 
