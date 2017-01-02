@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from './services/firebase.service';
+import { AngularFire, AuthProviders } from 'angularfire2';
 import { Auth } from './services/auth.service';
 import 'rxjs/add/operator/map';
 
@@ -17,22 +18,35 @@ import { AllCourses } from "./firebase/AllCourses";
 })
 
 export class AppComponent implements OnInit {
-     allcourses: AllCourses[];
-     categories: Category[];
-     // statuses: Status[];
-     usercourses: UserCourse[];
-     profile: any;
-     appState: string;
-     activeKey: string;
-     activeSchool: string;
-     activeName: string;
-     activeUrl: string;
-     activeCategory: string;
-     activeStatus: string;
+    user = {};
+    allcourses: AllCourses[];
+    categories: Category[];
+    // statuses: Status[];
+    usercourses: UserCourse[];
+    profile: any;
+    appState: string;
+    activeKey: string;
+    activeSchool: string;
+    activeName: string;
+    activeUrl: string;
+    activeCategory: string;
+    activeStatus: string;
+    
+    constructor(private _firebaseService: FirebaseService, private auth: Auth, public af: AngularFire
+      ) {
+        this.af.auth.subscribe(user => {
+          if(user) {
+            // user logged in
+            this.user = user;
+          }
+          else {
+            // user not logged in
+            this.user = {};
+          }
+          });
+      }      
 
-     constructor(private _firebaseService: FirebaseService, private auth: Auth) {}
-
-     ngOnInit() {
+    ngOnInit() {
           /*
               this._firebaseService.getUserCourses()
                 .subscribe(usercourses => {
