@@ -9,12 +9,24 @@ import { Router } from '@angular/router';
 })
 
 export class LoginComponent /* implements onInit */ { 
+
+    login() {
+      this.af.auth.login({
+        provider: AuthProviders.Google
+      });
+    }
+     
+    logout() {
+      this.af.auth.logout();
+    }
+    
+}
 /*
   private errorDuringLogin = false;
 
   constructor(private auth: Auth, loginService: LoginService, private router: Router) {
     */
-    
+
   }  
 /*
   ngOnInit() {
