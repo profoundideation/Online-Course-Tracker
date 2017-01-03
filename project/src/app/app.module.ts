@@ -15,7 +15,7 @@ import {
 // import { } auth0-angular
 
 // MATERIAL DESIGN MODULES
-/*
+
 import { MdToolbarModule } from '@angular2-material/toolbar';
 import { MdButtonModule } from '@angular2-material/button';
 import { MdCardModule } from '@angular2-material/card';
@@ -25,7 +25,6 @@ export let MD_MODULES: any = [
   MdButtonModule,
   MdCardModule
 ];
-*/
 
 import { routing, appRoutingProviders } from './app.routing';
 import { AppComponent } from './app.component';
@@ -83,11 +82,13 @@ export const firebaseConfig = {
           routing,      
           AngularFireModule.initializeApp(firebaseConfig, {
               provider: AuthProviders.Google,
-              method: AuthMethods.Popup
-        })
+              method: AuthMethods.Redirect
+        }),        
+          BrowserModule,
+          ...MD_MODULES
      ],
-     providers: [appRoutingProviders, AUTH_PROVIDERS, Auth, AuthGuard],
-     bootstrap: [AppComponent]
+     providers: [ appRoutingProviders, AUTH_PROVIDERS, Auth, AuthGuard ],
+     bootstrap: [ AppComponent ]
 })
 
 export class AppModule { }

@@ -1,6 +1,55 @@
-<button md-raised-button (click)="login()">
+<!--<button md-raised-button (click)="login()">
   <img width="30" src="../../../assets/images/Google-logo-2015-G-icon.png" />Use My Google Account
 </button>
 <button md-raised-button (click)="logout()">
   Logout
-</button>
+</button>-->
+
+
+<md-toolbar [color]="authColor">
+  <span>Log In</span>
+</md-toolbar>
+
+<section [ngSwitch]="isAuth">
+
+  <h3 *ngSwitchCase="false">Choose Your Identity Provider</h3>
+
+  <md-card *ngSwitchCase="false">
+
+    <button md-raised-button (click)="login('google')">
+      <img width="30" src="https://raw.githubusercontent.com/profoundhub/NG-AngularFire2-Auth/master/AuthTest/public/google-logo.png" />Use My Google Account
+    </button>
+<!--
+    <button md-raised-button (click)="login('facebook')">
+      <img width="30" src="https://raw.githubusercontent.com/profoundhub/NG-AngularFire2-Auth/master/AuthTest/public/facebook-logo.png" />Use My Facebook Account
+    </button>
+
+    <button md-raised-button (click)="login('twitter')">
+      <img width="30" src="https://raw.githubusercontent.com/profoundhub/NG-AngularFire2-Auth/master/AuthTest/public/twitter-logo.png" />Use My Twitter Account
+    </button>-->
+
+    <button md-raised-button (click)="login('github')">
+      <img width="30" src="https://raw.githubusercontent.com/profoundhub/NG-AngularFire2-Auth/master/AuthTest/public/github-logo.png" />Use My Github Account
+    </button>
+
+  </md-card>
+
+  <md-card *ngSwitchCase="true">
+     <md-card-header>
+        <img md-card-avatar [src]="user.avatar || 'avatar.png'">
+        <md-card-title>{{ user.name }}</md-card-title>
+        <md-card-subtitle>{{ user.email || '(no email)' }}</md-card-subtitle>
+     </md-card-header>
+     <img md-card-image src="https://github.com/profoundhub/NG-AngularFire2-Auth/blob/master/AuthTest/src/app/images/md-banner.jpg?raw=true">
+     <md-card-content>
+        <p>You are logged in using <strong>{{ user.provider }}</strong></p>
+     </md-card-content>
+     <div>
+       <button md-raised-button (click)="logout()">
+         Logout
+       </button>
+     </div>
+  </md-card>
+
+
+</section>
