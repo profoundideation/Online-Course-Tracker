@@ -4,15 +4,11 @@
 <slideshow></slideshow>
 
 
-<md-toolbar [color]="authColor">
-  <span>Angular2 Auth with AngularFire2</span>
-</md-toolbar>
-
 <section [ngSwitch]="isAuth">
 
   <h3 *ngSwitchCase="false">Choose your Federated Identity Provider</h3>
 
-  <md-card *ngSwitchCase="false">
+  <div *ngSwitchCase="false">
 
     <button md-raised-button (click)="login('google')">
       <img width="30" src="google-logo.png" />Use My Google Account
@@ -30,9 +26,9 @@
       <img width="30" src="github-logo.png" />Use My Github Account
     </button>
 
-  </md-card>
+  </div>
 
-  <md-card *ngSwitchCase="true">
+  <div *ngSwitchCase="true">
      <md-card-header>
         <img md-card-avatar [src]="user.avatar || 'avatar.png'">
         <md-card-title>{{ user.name }}</md-card-title>

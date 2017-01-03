@@ -8,6 +8,12 @@ import { AUTH_PROVIDERS } from 'angular2-jwt';
 // import { } angular-aria
 // import { } auth0-angular
 
+// MATERIAL DESIGN MODULES
+import { MdToolbarModule } from '@angular2-material/toolbar';
+import { MdButtonModule } from '@angular2-material/button';
+import { MdCardModule } from '@angular2-material/card';
+
+
 import { routing, appRoutingProviders } from './app.routing';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';

@@ -18,6 +18,8 @@ import { AllCourses } from "./firebase/AllCourses";
 })
 
 export class AppComponent implements OnInit {
+    isAuth = false;
+    authColor = 'warn';
     user = {};
     allcourses: AllCourses[];
     categories: Category[];
@@ -96,12 +98,14 @@ export class AppComponent implements OnInit {
         })
         */
      }
-     
+  /*
     firebaseAuthConfig({
         method: AuthMethods.Redirect
-      });
+      }); 
       
-    login() {
+  */
+      
+    login(from: string) {
       this.af.auth.login({
         provider: AuthProviders.Google,
         method: AuthMethods.Redirect
@@ -114,5 +118,29 @@ export class AppComponent implements OnInit {
       this.af.auth.logout();
       console.log("Logged Out");
     }
+
+    
+  private _getUserInfo(user: any): any {
+    if(!user) {
+      return {};
+    }
+    let data = user.auth.providerData[0];
+    return {
+      name: data.displayName,
+      avatar: data.photoURL,
+      email: data.email,
+      provider: data.providerId
+    };
+  }
+
+  private _getProvider(from: string) {
+    switch(from){
+      case 'twitter': return AuthProviders.Twitter;
+      case 'facebook': return AuthProviders.Facebook;
+      case 'github': return AuthProviders.Github;
+      case 'google': return AuthProviders.Google;
+    }
+  }
+
 
 }
