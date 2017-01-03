@@ -1,18 +1,13 @@
 <!--<login></login>-->
+<div>
+  <span>User Details</span>
+</div>
 
+<section *ngIf=="isAuth">
 
-<slideshow></slideshow>
+  <h3 *ngIf="false">Choose your Federated Identity Provider</h3>
 
-
-<md-toolbar [color]="authColor">
-  <span>Angular2 Auth with AngularFire2</span>
-</md-toolbar>
-
-<section [ngSwitch]="isAuth">
-
-  <h3 *ngSwitchCase="false">Choose your Federated Identity Provider</h3>
-
-  <md-card *ngSwitchCase="false">
+  <div *ngIf="false">
 
     <button md-raised-button (click)="login('google')">
       <img width="30" src="google-logo.png" />Use My Google Account
@@ -30,24 +25,27 @@
       <img width="30" src="github-logo.png" />Use My Github Account
     </button>
 
-  </md-card>
+  </div>
 
-  <md-card *ngSwitchCase="true">
-     <md-card-header>
-        <img md-card-avatar [src]="user.avatar || 'avatar.png'">
-        <md-card-title>{{ user.name }}</md-card-title>
-        <md-card-subtitle>{{ user.email || '(no email)' }}</md-card-subtitle>
-     </md-card-header>
+  <div *ngIf="true">
+     <div>
+        <img [src]="user.avatar || 'avatar.png'">
+        <p>{{ user.name }}</p>
+        <p>{{ user.email || '(no email)' }}</p>
+     </div>
      <img md-card-image src="md-banner.jpg">
-     <md-card-content>
+     <div>
         <p>You are logged in using <strong>{{ user.provider }}</strong></p>
-     </md-card-content>
-     <md-card-action>
+     </div>
+     <div>
        <button md-raised-button (click)="logout()">
          Logout
        </button>
-     </md-card-action>
-  </md-card>
+     </div>
+  </div>
 
 
 </section>
+
+
+<slideshow></slideshow>
