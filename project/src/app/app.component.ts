@@ -97,10 +97,10 @@ export class AppComponent implements OnInit {
         */
      }
      
-     firebaseAuthConfig({
-          method: AuthMethods.Redirect
-        })
-        
+    firebaseAuthConfig({
+        method: AuthMethods.Redirect
+      });
+      
     login() {
       this.af.auth.login({
         provider: AuthProviders.Google,
