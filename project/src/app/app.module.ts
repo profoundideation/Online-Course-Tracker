@@ -13,6 +13,11 @@ import { MdToolbarModule } from '@angular2-material/toolbar';
 import { MdButtonModule } from '@angular2-material/button';
 import { MdCardModule } from '@angular2-material/card';
 
+export let MD_MODULES: any = [
+  MdToolbarModule,
+  MdButtonModule,
+  MdCardModule
+];
 
 import { routing, appRoutingProviders } from './app.routing';
 import { AppComponent } from './app.component';
