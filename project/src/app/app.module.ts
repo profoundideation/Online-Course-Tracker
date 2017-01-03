@@ -1,13 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AngularFireModule } from 'angularfire2';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AUTH_PROVIDERS } from 'angular2-jwt';
+import { 
+  AngularFireModule, 
+  AuthMethods, 
+  AuthProviders 
+} from "angularfire2";
+
 // import { } angular-ui
 // import { } angular-material
 // import { } angular-aria
 // import { } auth0-angular
+
+// MATERIAL DESIGN MODULES
+
+import { MdToolbarModule } from '@angular2-material/toolbar';
+import { MdButtonModule } from '@angular2-material/button';
+import { MdCardModule } from '@angular2-material/card';
+
+export let MD_MODULES: any = [
+  MdToolbarModule,
+  MdButtonModule,
+  MdCardModule
+];
 
 import { routing, appRoutingProviders } from './app.routing';
 import { AppComponent } from './app.component';
@@ -21,7 +38,13 @@ import { AddformComponent } from './components/addform/addform.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { TestingComponent } from './components/testing/testing.component';
 import { MembersComponent } from './components/members/members.component';
+import { LoginComponent } from './components/login/login.component';
 import { SlideshowComponent } from './components/slideshow/slideshow.component';
+
+/* Feature Modules */
+/*
+import { CoreModule }       from './core.module';
+*/
 
 // import { EditformComponent } from './components/editform/editform.component';
 // import { ExtendsectionComponent } from './components/extendsection/extendsection.component';
@@ -43,6 +66,7 @@ export const firebaseConfig = {
           NavbarComponent,
           HeaderComponent,
           HomeComponent,
+          LoginComponent,
           WelcomeComponent,
           CoursesComponent,
           ProfileComponent,
@@ -51,15 +75,20 @@ export const firebaseConfig = {
           SlideshowComponent,
           FooterComponent
      ],
-     imports: [
+     imports: [          
           BrowserModule,
           FormsModule,
           HttpModule,
-          routing,
-          AngularFireModule.initializeApp(firebaseConfig)
+          routing,      
+          AngularFireModule.initializeApp(firebaseConfig, {
+              provider: AuthProviders.Google,
+              method: AuthMethods.Redirect
+        }),        
+          BrowserModule,
+          ...MD_MODULES
      ],
-     providers: [appRoutingProviders, AUTH_PROVIDERS, Auth, AuthGuard],
-     bootstrap: [AppComponent]
+     providers: [ appRoutingProviders, AUTH_PROVIDERS, Auth, AuthGuard ],
+     bootstrap: [ AppComponent ]
 })
 
 export class AppModule { }

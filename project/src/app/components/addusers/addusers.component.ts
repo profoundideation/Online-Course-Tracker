@@ -1,5 +1,5 @@
-import {Component, OnInit} from "@angular/core";
-import {FirebaseService} from "../../services/firebase.service";
+import { Component, OnInit } from "@angular/core";
+import { FirebaseService } from "../../services/firebase.service";
 
 import { UserCourse } from '../../firebase/UserCourse';
 import { Category } from '../../firebase/Category';

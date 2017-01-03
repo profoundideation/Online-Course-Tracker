@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Auth } from '../../services/auth.service';
+import { MdToolbarModule } from '@angular2-material/toolbar';
+import { MdButtonModule } from '@angular2-material/button';
+import { MdCardModule } from '@angular2-material/card';
 
 @Component({
   selector: 'welcome',
@@ -9,5 +12,9 @@ import { Auth } from '../../services/auth.service';
 
 export class WelcomeComponent { 
   constructor(private auth: Auth) {
+
+
   }    
+
+  
 }
