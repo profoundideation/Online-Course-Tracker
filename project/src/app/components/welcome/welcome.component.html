@@ -3,49 +3,50 @@
   <span>User Details</span>
 </div>
 
-<section *ngIf=="isAuth">
+<div>
 
-  <h3 *ngIf="false">Choose your Federated Identity Provider</h3>
+  <h3>Choose your Identity Provider</h3>
 
-  <div *ngIf="false">
+  <div>
 
-    <button md-raised-button (click)="login('google')">
+    <button>
       <img width="30" src="google-logo.png" />Use My Google Account
     </button>
 
-    <button md-raised-button (click)="login('facebook')">
+    <button>
       <img width="30" src="facebook-logo.png" />Use My Facebook Account
     </button>
 
-    <button md-raised-button (click)="login('twitter')">
+    <button>
       <img width="30" src="twitter-logo.png" />Use My Twitter Account
     </button>
 
-    <button md-raised-button (click)="login('github')">
+    <button>
       <img width="30" src="github-logo.png" />Use My Github Account
     </button>
 
   </div>
 
-  <div *ngIf="true">
+  <div>
      <div>
-        <img [src]="user.avatar || 'avatar.png'">
-        <p>{{ user.name }}</p>
-        <p>{{ user.email || '(no email)' }}</p>
+        <!--<img >-->
+        <!--<p>{{ user.name }}</p>
+        <p>{{ user.email }}</p> -->
+        <!--|| '(no email)' -->
      </div>
-     <img md-card-image src="md-banner.jpg">
+     <!--<img md-card-image src="md-banner.jpg">-->
      <div>
-        <p>You are logged in using <strong>{{ user.provider }}</strong></p>
+        <!--<p>You are logged in using <strong>{{ user.provider }}</strong></p>-->
      </div>
      <div>
-       <button md-raised-button (click)="logout()">
+       <button>
          Logout
        </button>
      </div>
   </div>
 
 
-</section>
+</div>
 
 
 <slideshow></slideshow>

@@ -13,6 +13,8 @@ import { MdCardModule } from '@angular2-material/card';
 export class WelcomeComponent { 
   constructor(private auth: Auth) {
 
-    
+
   }    
+
+  
 }
