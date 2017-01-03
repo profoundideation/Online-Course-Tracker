@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AngularFireModule } from 'angularfire2';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AUTH_PROVIDERS } from 'angular2-jwt';
@@ -23,6 +22,14 @@ import { TestingComponent } from './components/testing/testing.component';
 import { MembersComponent } from './components/members/members.component';
 import { LoginComponent } from './components/login/login.component';
 import { SlideshowComponent } from './components/slideshow/slideshow.component';
+import { 
+  AngularFireModule, 
+  AuthMethods, 
+  AuthProviders 
+} from "angularfire2";
+
+/* Feature Modules */
+import { CoreModule }       from './core.module';
 
 // import { EditformComponent } from './components/editform/editform.component';
 // import { ExtendsectionComponent } from './components/extendsection/extendsection.component';
@@ -53,12 +60,15 @@ export const firebaseConfig = {
           SlideshowComponent,
           FooterComponent
      ],
-     imports: [
+     imports: [          
           BrowserModule,
           FormsModule,
           HttpModule,
-          routing,
-          AngularFireModule.initializeApp(firebaseConfig)
+          routing,      
+          AngularFireModule.initializeApp(firebaseConfig, {
+              provider: AuthProviders.Google,
+              method: AuthMethods.Popup
+        })
      ],
      providers: [appRoutingProviders, AUTH_PROVIDERS, Auth, AuthGuard],
      bootstrap: [AppComponent]

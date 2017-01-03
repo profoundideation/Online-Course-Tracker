@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from './services/firebase.service';
-import { AngularFire, AuthProviders } from 'angularfire2';
+import { AngularFire, AuthMethods, AuthProviders } from 'angularfire2';
 import { Auth } from './services/auth.service';
 import 'rxjs/add/operator/map';
 
@@ -98,19 +98,21 @@ export class AppComponent implements OnInit {
      }
      
      firebaseAuthConfig({
-          method: AuthMethods.Popup
+          method: AuthMethods.Redirect
         })
         
     login() {
       this.af.auth.login({
         provider: AuthProviders.Google,
         method: AuthMethods.Redirect
+        
       });
+      console.log("Logging In");
     }
      
     logout() {
       this.af.auth.logout();
-      
+      console.log("Logged Out");
     }
 
 }
