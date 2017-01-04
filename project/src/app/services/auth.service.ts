@@ -5,7 +5,51 @@ import { options } from '../auth/auth.options';
 declare var Auth0Lock: any;
 declare var Auth0: any;
 declare var auth0: any;
+//
+import { Router } from "@angular/router";
 
+export interface User {
+    email: string;
+    password: string;
+    confirmPassword?: string;
+}
+
+// Our firebase variable from index.html,..... yes we are using JavaScript Firebase code
+
+declare var firebase: any;
+@Injectable()
+export class AuthService {
+  constructor(private router: Router) {}
+  signupUser(user: User) {
+    firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  signinUser(user: User) {
+    firebase.auth().signInWithEmailAndPassword(user.email, user.password)
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  logout() {
+    firebase.auth().signOut();
+    this.router.navigate(['/signin']);
+  }
+
+  isAuthenticated() {
+    var user = firebase.auth().currentUser;
+    if (user) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+//
 @Injectable() 
 
 // Store profile object in auth class
@@ -38,7 +82,7 @@ export class Auth {
     constructor() {
         this.userProfile = JSON.parse(localStorage.getItem('profile'));
         var self = this;
-
+/*
         this.lock.on("authenticated", (authResult:any) => {
             self.lock.getUserInfo(authResult.idToken, function(error:any, profile:any) {                
                 if (error) {
@@ -59,30 +103,31 @@ export class Auth {
                 });
 
             });
-        });
+        }); */
 
     }
 
-    public login() {        
-        this.lock.show({
-            }, function(err, profile, id_token) {
-              localStorage.setItem('profile', JSON.stringify(profile));
-              var options = {
-                id_token : id_token,
-                api : 'firebase',
-                scope : 'openid name email displayName',
-                target: 'profound.auth0.com'
-              };
-              auth0.getDelegationToken(options, function(err, result){
-                if(!err) {
-                  firebase.auth().signInWithCustomToken(result.id_token).catch(function(error) {
-                    console.log(error);
-                  });
-                }
-              });
-            }, function(error) {
-              alert(error);
-            });        
+    public login() {
+
+        // this.lock.show({
+        //     }, function(err, profile, id_token) {
+        //       localStorage.setItem('profile', JSON.stringify(profile));
+        //       var options = {
+        //         id_token : id_token,
+        //         api : 'firebase',
+        //         scope : 'openid name email displayName',
+        //         target: 'profound.auth0.com'
+        //       };
+        //       auth0.getDelegationToken(options, function(err, result){
+        //         if(!err) {
+        //           firebase.auth().signInWithCustomToken(result.id_token).catch(function(error) {
+        //             console.log(error);
+        //           });
+        //         }
+        //       });
+        //     }, function(error) {
+        //       alert(error);
+        //     });        
     }
 
     public authenticated() {

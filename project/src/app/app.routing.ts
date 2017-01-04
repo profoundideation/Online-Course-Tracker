@@ -2,7 +2,7 @@ import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { AuthGuard } from './auth/auth.guard';
+// import { AuthGuard } from './auth/auth.guard';
 
 const appRoutes: Routes = [{
      path: '',
@@ -14,6 +14,6 @@ const appRoutes: Routes = [{
 }];
 
 export const appRoutingProviders: any[] = [
-    AuthGuard
+    // AuthGuard
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
