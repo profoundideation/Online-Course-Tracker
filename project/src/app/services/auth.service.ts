@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
-import { options } from '../auth/auth.options';
+// import { options } from '../auth/auth.options';
 
 declare var Auth0Lock: any;
-declare var Auth0: any;
-declare var auth0: any;
+// declare var Auth0: any;
+// declare var auth0: any;
 //
 import { Router } from "@angular/router";
 

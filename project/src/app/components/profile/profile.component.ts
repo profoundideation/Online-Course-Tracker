@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Auth } from '../../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'profile',
@@ -9,7 +9,7 @@ import { Auth } from '../../services/auth.service';
 
 export class ProfileComponent {   
   profile: any;
-  constructor(private auth: Auth) {
+  constructor(private auth: AuthService) {
     this.profile = JSON.parse(localStorage.getItem('profile'));
     console.log(this.profile);
   }
