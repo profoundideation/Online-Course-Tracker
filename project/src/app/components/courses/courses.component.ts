@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Auth } from '../../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 import { FirebaseService } from '../../services/firebase.service';
 import 'rxjs/add/operator/map';
 
 import { AddformComponent } from '../addform/addform.component';
-import { AllCourses } from '../../firebase/AllCourses';
-import { UserCourse } from '../../firebase/UserCourse';
-import { Category } from '../../firebase/Category';
-import { Status } from '../../firebase/Status';
+import { AllCourses } from '../../models/AllCourses';
+import { UserCourse } from '../../models/UserCourse';
+import { Category } from '../../models/Category';
+import { Status } from '../../models/Status';
 
 declare var i: any;
 
@@ -32,7 +32,7 @@ export class CoursesComponent implements OnInit {
     activeCategory: string;
     activeStatus: string;
 
-    constructor(private _firebaseService: FirebaseService, private auth: Auth) {
+    constructor(private _firebaseService: FirebaseService, private auth: AuthService) {
         this.profile = JSON.parse(localStorage.getItem('profile'));
     }
 
