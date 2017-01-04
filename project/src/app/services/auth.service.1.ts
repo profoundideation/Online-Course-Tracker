@@ -16,21 +16,13 @@ export class Auth {
     FIREBASE_APIKEY = 'AIzaSyBE0_9cQ8vmZkj-ZYS0RYZcDCcif13uzdA';
     FIREBASE_AUTH_DOMAIN = 'course-tracker-46e40.firebaseapp.com';
     FIREBASE_DATABASE_URL = 'https://course-tracker-46e40.firebaseio.com';
-    /*
-    apiKey: "AIzaSyBE0_9cQ8vmZkj-ZYS0RYZcDCcif13uzdA",
-    authDomain: "course-tracker-46e40.firebaseapp.com",
-    databaseURL: "https://course-tracker-46e40.firebaseio.com",
-    storageBucket: "course-tracker-46e40.appspot.com",
-    messagingSenderId: "1060144476385"
-    */
-    
-    /*
+    /**/
     AUTH0_CLIENT_ID = '4XFEYeZgRXhrvplAPCjI3d1yVvQ7M7pl';
     AUTH0_DOMAIN = 'profound.auth0.com';    
     
     lock = new Auth0Lock('4XFEYeZgRXhrvplAPCjI3d1yVvQ7M7pl', 'profound.auth0.com', options);    
     auth0 = new Auth0({ domain : 'profound.auth0.com', clientID: '4XFEYeZgRXhrvplAPCjI3d1yVvQ7M7pl' });    
-    */
+    /**/
 
     //Store profile object in auth class
     userProfile: Object;

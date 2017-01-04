@@ -107,8 +107,12 @@ export class AppComponent implements OnInit {
       
     login(from: string) {
       this.af.auth.login({
+        /*
         provider: AuthProviders.Google,
         method: AuthMethods.Popup
+        */
+        provider: AuthProviders.Password,
+        method: AuthMethods.Password
         // method: AuthMethods.Redirect
       });
       console.log("Logging In");
