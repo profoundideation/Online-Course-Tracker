@@ -16,11 +16,13 @@ export class Auth {
     FIREBASE_APIKEY = 'AIzaSyBE0_9cQ8vmZkj-ZYS0RYZcDCcif13uzdA';
     FIREBASE_AUTH_DOMAIN = 'course-tracker-46e40.firebaseapp.com';
     FIREBASE_DATABASE_URL = 'https://course-tracker-46e40.firebaseio.com';
+    /**/
     AUTH0_CLIENT_ID = '4XFEYeZgRXhrvplAPCjI3d1yVvQ7M7pl';
-    AUTH0_DOMAIN = 'profound.auth0.com';
-
+    AUTH0_DOMAIN = 'profound.auth0.com';    
+    
     lock = new Auth0Lock('4XFEYeZgRXhrvplAPCjI3d1yVvQ7M7pl', 'profound.auth0.com', options);    
     auth0 = new Auth0({ domain : 'profound.auth0.com', clientID: '4XFEYeZgRXhrvplAPCjI3d1yVvQ7M7pl' });    
+    /**/
 
     //Store profile object in auth class
     userProfile: Object;
@@ -64,7 +66,7 @@ export class Auth {
                 target: 'profound.auth0.com'
               };
               auth0.getDelegationToken(options, function(err, result){
-                if(!err){
+                if(!err) {
                   firebase.auth().signInWithCustomToken(result.id_token).catch(function(error) {
                     console.log(error);
                   });
