@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from './services/firebase.service';
 import { AngularFire, AuthMethods, AuthProviders } from 'angularfire2';
-import { Auth } from './services/auth.service';
+import { AuthService } from './services/auth.service';
 import 'rxjs/add/operator/map';
 
-// import { Course } from './firebase/Course';
-import { Category } from './firebase/Category';
-import { Status } from './firebase/Status';
-import { UserCourse } from './firebase/UserCourse';
-import { AllCourses } from "./firebase/AllCourses";
+// import { Course } from './models/Course';
+import { Category } from './models/Category';
+import { Status } from './models/Status';
+import { UserCourse } from './models/UserCourse';
+import { AllCourses } from "./models/AllCourses";
 
 @Component({
      selector: 'app-root',
@@ -18,7 +18,7 @@ import { AllCourses } from "./firebase/AllCourses";
 })
 
 export class AppComponent implements OnInit {
-    isAuth = false;
+    // isAuth = false;
     authColor = 'warn';
     user = {};
     allcourses: AllCourses[];
@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
     activeCategory: string;
     activeStatus: string;
     
-    constructor(private _firebaseService: FirebaseService, private auth: Auth, public af: AngularFire
+    constructor(private _firebaseService: FirebaseService, /* private auth: Auth, */ public af: AngularFire, private authService: AuthService
       ) {
         this.af.auth.subscribe(user => {
           if(user) {
@@ -146,5 +146,13 @@ export class AppComponent implements OnInit {
     }
   }
 
+  isAuth() {
+    return this.authService.isAuthenticated();
+  }
+
+  onLogout() {
+    this.authService.logout();
+
+  }
 
 }
