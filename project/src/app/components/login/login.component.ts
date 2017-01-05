@@ -115,6 +115,7 @@ export class LoginComponent /* implements onInit */ {
       case 'facebook': return AuthProviders.Facebook;
       case 'github': return AuthProviders.Github;
       case 'google': return AuthProviders.Google;
+      case 'email': return AuthProviders.Password;
     }
   }
 }
