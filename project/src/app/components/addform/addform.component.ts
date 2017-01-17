@@ -56,7 +56,7 @@ export class AddformComponent implements OnInit {
      }
 
      addCourse(
-          school: string,w
+          school: string,
           name: string,
           url: string,
           category: string,
