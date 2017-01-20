@@ -1,9 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { FirebaseService } from "../../services/firebase.service";
-
-import { UserCourse } from '../../firebase/UserCourse';
-import { Category } from '../../firebase/Category';
-import { Status } from '../../firebase/Status';
+import { UserCourse } from '../../models/UserCourse';
+import { Category } from '../../models/Category';
+import { Status } from '../../models/Status';
 
 @Component({
 
