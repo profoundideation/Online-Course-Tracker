@@ -1,4 +1,5 @@
 <addform></addform>
+
 <router-outlet></router-outlet>
 
 <!-- EDIT FORM START -->
@@ -155,13 +156,14 @@
 
 <!-- <testing></testing> -->
 <div class="jumbotron" *ngIf="auth.authenticated()">
-     <h6> Check: </h6>
-     <ul *ngFor="let usercourse of usercourses">         
+  <h6> Check: </h6>
+    <ul *ngFor="let usercourse of usercourses">         
           <li>{{ usercourse.name }}</li>
           <li>eLearning Platform: {{ usercourse.school }}</li>
           <li>Category: {{ usercourse.category }}</li>
           <li>Topic: <!--{{ usercourse.topic }} --></li>          
           <li>Status: {{ usercourse.status }}</li>
-     </ul>
+    </ul>
 </div>
+
 <members></members>
