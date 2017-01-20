@@ -11,7 +11,8 @@ export class LoginService {
   public displayName: string = '';
   public photoUrl: string = '';
 
-  constructor(private af: AngularFire) {    
+  constructor(private af: AngularFire) {
+    console.log("Sparking a new LoginService");
   }
 
   private storeAuthInfo(authState: FirebaseAuthState): FirebaseAuthState {
@@ -43,7 +44,7 @@ export class LoginService {
         console.log("Successful Token-based Login");
         return this.storeAuthInfo(authState);
       }).catch((err) => {
-        console.log("Error with auth token: " + err, " Clearing cached token.");
+        console.log("Error with auth token: " + err, " Clearing cached token..");
         localStorage.setItem('idToken', '');
         localStorage.setItem('accessToken', '');
       });

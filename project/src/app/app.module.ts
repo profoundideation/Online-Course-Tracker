@@ -49,8 +49,8 @@ import { CoreModule }       from './core.module';
 // import { EditformComponent } from './components/editform/editform.component';
 // import { ExtendsectionComponent } from './components/extendsection/extendsection.component';
 
-import { AuthService } from './services/auth.service';
-// import { AuthGuard } from './auth/auth.guard';
+import { Auth } from './services/auth.service';
+import { AuthGuard } from './auth/auth.guard';
 
 export const firebaseConfig = {
      apiKey: "AIzaSyBE0_9cQ8vmZkj-ZYS0RYZcDCcif13uzdA",
@@ -87,7 +87,7 @@ export const firebaseConfig = {
           BrowserModule,
           ...MD_MODULES
      ],
-     providers: [ appRoutingProviders, AUTH_PROVIDERS, AuthService ],
+     providers: [ appRoutingProviders, AUTH_PROVIDERS, Auth, AuthGuard ],
      bootstrap: [ AppComponent ]
 })
 
