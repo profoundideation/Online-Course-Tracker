@@ -12,4 +12,4 @@ To get this app up and running:
 - ng serve
 
 ### Notes:
-Dont' use Yarn, as it tends to mess-up the build.
+Don't use Yarn, as it tends to mess-up the build.
