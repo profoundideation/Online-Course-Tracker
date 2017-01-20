@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { Auth } from '../../services/auth.service';
 
 @Component({
   selector: 'slideshow',
@@ -8,6 +8,6 @@ import { AuthService } from '../../services/auth.service';
 })
 
 export class SlideshowComponent {
-  constructor(private auth: AuthService) {
+  constructor(private auth: Auth) {
   }
 }
