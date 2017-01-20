@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { Auth } from '../../services/auth.service';
 
 declare var i: any;
 
@@ -10,6 +10,6 @@ declare var i: any;
 })
 
 export class MembersComponent {
-  constructor(private authservice: AuthService) {
+  constructor(private auth: Auth) {
   }  
 }

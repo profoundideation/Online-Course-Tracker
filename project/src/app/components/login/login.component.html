@@ -4,10 +4,14 @@
 <button md-raised-button (click)="logout()">
   Logout
 </button>-->
+
+
 <md-toolbar [color]="authColor">
   <span>Log In</span>
 </md-toolbar>
+
 <section [ngSwitch]="isAuth">
+
   <h3 *ngSwitchCase="false">Choose Your Identity Provider</h3>
 
   <md-card class="md-accent" style="background-color: darkslateblue;" *ngSwitchCase="false">
@@ -29,11 +33,8 @@
     </button>
 
     <button md-raised-button (click)="login('email')">
-      <!--<img width="30" src="https://raw.githubusercontent.com/profoundideation/Online-Course-Tracker/master/project/src/assets/images/email-auth.png" />Use My Email Account-->
-      <img width="30" src="../../../assets/images/email-auth.png" />Use My Email Account
-      
+      <img width="30" src="" />Use My Email Account
     </button>
-
   </md-card>
   <md-card *ngSwitchCase="true">
      <md-card-header>
