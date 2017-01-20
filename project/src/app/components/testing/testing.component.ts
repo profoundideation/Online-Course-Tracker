@@ -8,7 +8,6 @@ import { UserCourse } from '../../firebase/UserCourse';
 import { Category } from '../../firebase/Category';
 import { Status } from '../../firebase/Status';
 
-
 @Component({
      selector: 'testing',
      styleUrls: [ 'testing.component.css' ],
