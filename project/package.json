@@ -1,6 +1,6 @@
 {
   "name": "online-course-tracker",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
@@ -39,10 +39,11 @@
     "zone.js": "^0.7.7"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0-rc.0",
+    "@angular/cli": "^1.0.0-rc.0",
     "@angular/compiler-cli": "2.4.8",
     "@types/jasmine": "2.5.43",
     "@types/node": "^7.0.5",
+    "angular-cli": "^0.1.0",
     "codelyzer": "~3.0.0-beta.0",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "3.2.0",
