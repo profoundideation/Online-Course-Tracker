@@ -39,10 +39,10 @@
     "zone.js": "^0.7.7"
   },
   "devDependencies": {
+    "@angular/cli": "1.0.0-rc.0",
     "@angular/compiler-cli": "2.4.8",
     "@types/jasmine": "2.5.43",
     "@types/node": "^7.0.5",
-    "@angular/cli": "1.0.0-rc.0",
     "codelyzer": "~3.0.0-beta.0",
     "jasmine-core": "2.5.2",
     "jasmine-spec-reporter": "3.2.0",
@@ -51,13 +51,14 @@
     "karma-cli": "^1.0.1",
     "karma-jasmine": "^1.1.0",
     "karma-remap-istanbul": "^0.6.0",
+    "npm-autoinit": "^0.2.0",
     "protractor": "5.1.1",
+    "rxjs": "5.2.0",
     "surge": "^0.18.0",
     "ts-node": "2.1.0",
     "tslint": "4.5.0",
     "typescript": "2.2.1",
     "webdriver-manager": "12.0.2",
-    "rxjs": "5.2.0",
     "zone.js": "^0.7.7"
   },
   "repository": {
